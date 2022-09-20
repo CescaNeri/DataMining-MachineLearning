@@ -55,4 +55,98 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 
 ![](DT.jpg)
 
+## Pattern
+
+A pattern is a synthetic representation rich in semantics of a set of data. It usually expresses a recurring pattern in data, but can also express an exceptional pattern.
+
+A pattern must be:
+- Valid on data with a certain degree of confidence
+- It can be understood from the syntax and semantic point of view, so that the user can interpret it
+- Previously unknown and potentially useful, so that users can take actions accordingly
+
+When we distinguish between a manual technique (DW) and an automatic technique is the creation of a small subset of data which is rich in semantics.
+
+The process begins with a huge multi-dimension cube of data, then grouping and selection techniques are adopted, creating a **pattern**.
+
+**Pattern types:**
+- Association rules (logical implications of the dataset)
+- Classifiers (classify data according to a set of priori assigned classes)
+- Decision trees (identify the causes that lead to an event, in order of importance)
+- Clustering (group elements depending on their characteristics)
+- Time series (detection of recurring or atypical patterns in complex data sequences)
+
+## Data Mining Applications
+
+**Predictive Systems**
+Exploit some features to predict the unknown values of other features (classification and regression).
+
+**Descriptive Systems**
+Find user-readable patterns that can be understood by human users (clustering, association rules, sequential patter).
+
+## Classification - Definition
+
+Given a **record** set, where each record is composed by a set of attributes (one of them represents the class of the record), find a model for the class attribute expressing the attribute value as a function of the remaining attributes.
+
+*Given a feature (defined at priori), define weather a user belongs to that feature*
+
+This model must work even when the record is not given. Unclassified record must be assigned to a class in the most accurate way.
+
+A **test set** is used to determine the model accuracy.
+
+![](test.jpg)
+
+## Classification example
+
+**Direct Marketing:**
+The goal is to reduce the cost of email marketing by defining the set of customers that, with the highest probability, will buy a new product.
+
+Technique:
+- Exploit the data collected during the launch of similar products
+    - We know which customers bought and which one did not
+    - {*buy, not buy*} = **class attribute**
+- Collect all the available information about each customers
+- Use such information as an input to train the model
+
+**Churn Detection**
+Predict customers who are willing to go to a competitor.
+
+Technique:
+- Use the purchasing data of individual users to find the relevant attributes
+- Label users as {*loyal, not loyal*}
+- Find a pattern that defines loyalty
+
+## Clustering example
+
+Given a set of points, each featuring set of attributes, and having a similarity measure between points, find subset of points such that:
+*points belonging to a cluster are more similar to each other than those belonging to other clusters*
+
+**Marketing Segmentation**
+The goal is to spit customers into distinct subsets to target specific marketing activities.
+
+Techniques:
+- Gather information about customer lifestyle and geographic location
+- Find clusters of similar customers
+- Measure cluster quality by verifying whether the purchasing patterns of customers belonging to the same cluster are more similar to those of distinct clusters
+
+## Association Rules example
+
+Given a set of records each consisting of multiple elements belonging to a given collection.
+It produces rules of dependence that predict the occurrence of one of the elements in the presence of others.
+
+**Marketing Sales Promotion**
+Suppose you have discovered this association rule:
+{*Bagels,...} -> {*Potato chips*}
+
+This information can be used to understand what actions to take to increase its sales. 
+
+## Data Mining Bets
+- Scalability
+- Multidimensionality of data set
+- Complexity and heterogeneity of the data
+- Data quality
+- Data properties
+- Privacy keeping
+- Processing in real-time
+
+
 
