@@ -68,7 +68,31 @@ Variance and SD are the most common measures of dispersion of a data set.
 
 The quality of the datasets profoundly affects the chances of finding meaningful patterns.
 The most frequent problems that deteriorate data quality are:
-- Noise and outliers
-- Missing values
-- DUplicated values
+- Noise and outliers (objects with characteristics very different from all other objects in the data set)
+- Missing values (not collecting the data is different from when the attribute is not applicable), how to handle them:
+    - Delete the objects that contain them
+    - Ignore missing values during analysis
+    - Manually/automatically fill the missing values
+        - ML can be applied to fill the missing values by inferring the other values of that attribute and calculate the most appropriate value 
+- Duplicated values (it may be necessary to introduce a data cleaning step in order to identify and eliminate redundancy)
+
+## Dataset Preprocessing
+Rarely the dataset has the optimal characteristics to be best processed by machine learning algorithms. It is therefore necessary to put in place a series of actions to enable the algorithms of interest to function:
+- **Aggregation:** combine two or more attributes into one attribute
+- **Sampling:** main technique to select data
+    - Collecting and processing the entire dataset is too expensive and time consuming
+    - Simple Random Sampling (same probability of selecting each element)
+    - Stratified sampling (divides the data into multiple partitions and use simple random sampling on each partition)
+        - Before sampling a partitioning rule is applied (we inject knowledge about the domain)
+        - Allow the population to be balanced
+        - However, we are applying a distortion
+    - Sampling Cardinality: after choosing the sampling mode, it is necessary to fix the sample size in order to limit the loss of information
+- **Dimensionality reduction:** the goal is to avoid the 'curse of dimensionality', reduce the amount of time and memory used by ML algorithms, simplify data visualization and eliminate irrelevant attributes and eliminate noise on data.
+- **Attribute creation**
+- **Discretization and binarization**
+- **Attribute transformation**
+
+
+
+
 
