@@ -148,5 +148,22 @@ This information can be used to understand what actions to take to increase its 
 - Privacy keeping
 - Processing in real-time
 
+## CRISP methodology
 
+A data mining project requires a structured approach in order to choose the best algorithm.
+
+**CRISP-DM** methodology is the most used technique. It is one of the most structures proposals to define the fundamental steps of a data mining project. 
+
+![](crisp.jpg)
+
+The six stages of the life cycle are not strictly sequential, indeed, it is often necessary.
+
+1. **Business understanding** (understand the application domain): understanding project goals from users' point of view, translate the user's problem into a data mining problem and define a project plan.
+    - Get an idea about the business domain and the data mining approach to adopt.
+2. **Data understanding**: preliminary data collection aimed at identifying quality problems and conducting preliminary analysis to identify the salient characteristics.
+3. **Data preparation**: tasks needed to create the final dataset, selecting attributes and records, transforming and cleaning data.
+    - Prepare the data for ML tasks (clean, complete missing data, create new features)
+4. **Model creation**: data mining techniques are applied to the dataset in order to identify what makes the model more accurate.
+5. **Evaluation of model and results**: the model obtained from the previous phase are analyzed to verify that they are sufficiently precise and robust to respond adequately to the user's objectives.
+6. **Deployment**: the built-in model and acquired knowledge must be made available to users.
 
