@@ -166,4 +166,6 @@ The six stages of the life cycle are not strictly sequential, indeed, it is ofte
 4. **Model creation**: data mining techniques are applied to the dataset in order to identify what makes the model more accurate.
 5. **Evaluation of model and results**: the model obtained from the previous phase are analyzed to verify that they are sufficiently precise and robust to respond adequately to the user's objectives.
 6. **Deployment**: the built-in model and acquired knowledge must be made available to users.
+    - Change the software and processes to include new AI functionalities
 
+Different classes of data mining use different algorithms so the evaluation changes accordingly. 
