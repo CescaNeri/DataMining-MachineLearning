@@ -88,9 +88,38 @@ Rarely the dataset has the optimal characteristics to be best processed by machi
         - However, we are applying a distortion
     - Sampling Cardinality: after choosing the sampling mode, it is necessary to fix the sample size in order to limit the loss of information
 - **Dimensionality reduction:** the goal is to avoid the 'curse of dimensionality', reduce the amount of time and memory used by ML algorithms, simplify data visualization and eliminate irrelevant attributes and eliminate noise on data.
-- **Attribute creation**
-- **Discretization and binarization**
-- **Attribute transformation**
+Curse of dimensionality: as dimensionality increases, the data become progressively more sparse. Many clustering and classification algorithms deal with dimensionality and distances. All the elements become equi-distant from one another; the idea of selecting the right dimension to carry out analysis is crucial.
+
+![](dimension.jpg)
+
+The curve indicates that the more we increase the number of dimensionality, the smaller the ratio is.
+In the modeling phase, it is important reduce dimensionality.
+
+The goal is to reduce dimensionality and carry out analysis with the highest information amount.
+    - **Principal Component Analysis:** it is a projection method that transforms objects belonging to a p-dimensional space into a k-dimensional space in such way as to preserve maximum information in the initial dimension.
+- **Attribute creation:** it is a way to reduce the dimensionality of data. The selection usually aims to eliminate redundant. 
+We can use different attribute selection techniques:
+    - Exhaustive approaches
+    - Non-exhaustive approaches
+    - Feature engineering (create new features): we have raw data and we can extract useful KPIs by designing new attributes.
+- **Discretization and binarization:** transformation of continuos-valued attributes to discrete-valued attributes. Discretization techniques can be unsupervised (do not exploit knowledge about the class to which elements belong) or supervised (exploit knowledge about the class to which the elements belong).
+    - Unsupervised: equi-width, equi-frequency, K-means
+![](discretization.jpg)
+
+    - Supervised: discretization intervals are positioned to maximize the 'purity' of the intervals
+
+**Entropy and Information Gain:** it is the measure of uncertainty about the outcome of an experiment that can be modeled by a random variable x.
+The entropy of a **certain** event is zero.
+
+The entropy of a discretization into n intervals depends on how pure each group.
+
+![](entropy.jpg)
+
+**Binarization:** we start with a discrete attribute but we need it to be binary.
+
+- **Attribute transformation:** function that maps the entire set of values of an attribute to a new set such that each value in the starting set corresponds to a unique value in the ending set. 
+
+## Similarity and Dissimilarity
 
 
 
