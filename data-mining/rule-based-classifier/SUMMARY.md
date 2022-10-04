@@ -1,0 +1,1 @@
+* [Rule-Based classifier Model](rule-classifier.md)

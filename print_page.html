@@ -402,6 +402,54 @@
   
   
   
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Rule-Based Classifier
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Rule-Based Classifier" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rule-Based Classifier
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="data-mining/rule-based-classifier/rule-classifier.html" class="md-nav__link">
+        Rule-Based classifier Model
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
     <li class="md-nav__item">
       
       <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
@@ -488,6 +536,26 @@
           <li class="md-nav__item">
   <a href="#data-mining-decision-tree-model" class="md-nav__link">
     4. Decision Tree Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-rule-based-classifier" class="md-nav__link">
+    IV. Rule-Based Classifier
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. Rule-Based Classifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-mining-rule-based-classifier-rule-classifier" class="md-nav__link">
+    5. Rule-Based classifier Model
   </a>
   
 </li>
@@ -587,6 +655,26 @@
           <li class="md-nav__item">
   <a href="#data-mining-decision-tree-model" class="md-nav__link">
     4. Decision Tree Model
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#section-rule-based-classifier" class="md-nav__link">
+    IV. Rule-Based Classifier
+  </a>
+  
+    <nav class="md-nav" aria-label="IV. Rule-Based Classifier">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-mining-rule-based-classifier-rule-classifier" class="md-nav__link">
+    5. Rule-Based classifier Model
   </a>
   
 </li>
@@ -1121,7 +1209,65 @@ They assume that FN and FP have the same weight, thus they are cost-intensive, b
 </ul>
 <h2 id="data-mining-decision-tree-model-c45-j48-on-weka">C4.5 (J48 on Weka)</h2>
 <p>This algorithm exploits the GainRatio approach. It manages continuous attributes by determining a split point dividing the range of values into two.
-It manages data with missed values and run post pruning of the created tree.</p></section><h1 class='nav-section-title-end'>Ended: Decision Tree</h1></div>
+It manages data with missed values and run post pruning of the created tree.</p></section><h1 class='nav-section-title-end'>Ended: Decision Tree</h1>
+                        <h1 class='nav-section-title' id='section-rule-based-classifier'>
+                            Rule-Based Classifier <a class='headerlink' href='#section-rule-based-classifier' title='Permanent link'>↵</a>
+                        </h1>
+                        <section class="print-page" id="data-mining-rule-based-classifier-rule-classifier"><h1 id="data-mining-rule-based-classifier-rule-classifier-rule-based-classifier">Rule-Based Classifier</h1>
+<p>The basic idea is to classify records using rule sets of the type "<em>if .. then</em>". The condition used with 'if' is called the antecedent and predicted class of each rule is called the consequent.</p>
+<p>A rule has the form: (condition) -&gt; y</p>
+<p>Building a model means identifying a set of rules</p>
+<p><img alt="" src="data-mining/rule-based-classifier/properties.jpg" /></p>
+<h2 id="data-mining-rule-based-classifier-rule-classifier-coverage-and-accuracy">Coverage and Accuracy</h2>
+<p>Given a dataset D and a classification rule A -&gt; y, we define:</p>
+<ul>
+<li><strong>Coverage</strong> as the portion of records satisfying the antecedent of the rule<ul>
+<li>Coverage = |A|/|D|</li>
+</ul>
+</li>
+<li><strong>Accuracy</strong> as the fraction that, by satisfying the antecedent, also satisfy the consequent<ul>
+<li>Accuracy = |A ∩ y|/|A|</li>
+</ul>
+</li>
+</ul>
+<p>A set of rules R us said to be <strong>mutually exclusive</strong> if no pair of rules can be activated by the same record.</p>
+<p>A set of rules R has <strong>exhaustive coverage</strong> if there is one rule for each combination of attribute values.</p>
+<h2 id="data-mining-rule-based-classifier-rule-classifier-properties">Properties</h2>
+<ul>
+<li>It is nt always possible to determine an exhaustive and mutually exclusive set of rules</li>
+<li>Lack of mutual exclusivity</li>
+<li>Lack of exhaustiveness</li>
+</ul>
+<h2 id="data-mining-rule-based-classifier-rule-classifier-rule-sorting-approach">Rule Sorting Approach</h2>
+<ol>
+<li>Rule-based sorting (individual rules are sort according to their quality)</li>
+<li>Class-based sorting (groups of rules that determine the same class appear consequently in the list)</li>
+</ol>
+<p><img alt="" src="data-mining/rule-based-classifier/sorting.jpg" /></p>
+<h2 id="data-mining-rule-based-classifier-rule-classifier-sequential-covering">Sequential Covering</h2>
+<p><div class="highlight"><pre><span></span><code>set R = Ø
+for each class y ∈ Y 0 y k do
+    stop=FALSE;
+while !stop do
+    r = Learn One Rule(E,A,y)
+    remove from E training records that are covered by r
+    If Quality(r,E ) &lt; Threshold then
+        stop=TRUE;
+    else
+        R = R ∪ r // Add r at the bottom of the rule list
+end while
+end for
+R = R ∪ {{} -&gt; y k } // Add the default rule at the bottom of the rule list
+PostPruning (R);
+</code></pre></div>
+<img alt="" src="data-mining/rule-based-classifier/sequantial.jpg" /></p>
+<h2 id="data-mining-rule-based-classifier-rule-classifier-dropping-instances-from-training-set">Dropping instances from Training Set</h2>
+<p>Deleting instances from the training set serves the purpose of:</p>
+<ul>
+<li>Properly classified instances: to avoid generating the same rule again and again, avoid overestimating the accuracy of the next rule</li>
+<li>Incorrectly classified instances: to avoid underestimating the accuracy of the next rule</li>
+</ul>
+<p><img alt="" src="data-mining/rule-based-classifier/dropping.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Rule-Based Classifier</h1></div>
 
 
 
