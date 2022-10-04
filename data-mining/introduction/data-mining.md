@@ -1,6 +1,7 @@
 # Data Mining
 
 The amount of data stored on computer is constantly increasing, coming from:
+
 - IoT data
 - Social data
 - Data on purchases
@@ -40,12 +41,14 @@ When we decide to digitalize a company, the adoption of BI solutions is incremen
 This is because it is risky, costly and useless to adopts advanced solutions before completely exploiting simple ones. 
 
 The goal is to create a **data-driven company**, where managers are supported by data. 
+
 - Decisions are based on quantitative rather than qualitative knowledge.
 - Process and knowledge are an asset of the company and are not lost if managers change
 
 *The gap between a data-driven decision and a good decision is a good manager*
 
 Adopting a data-driven mindset goes far beyond adopting a business intelligence solution and entails:
+
 1. Create a data culture
 2. Change the mindset of managers
 3. Change processes
@@ -60,6 +63,7 @@ Adopting a data-driven mindset goes far beyond adopting a business intelligence 
 A pattern is a synthetic representation rich in semantics of a set of data. It usually expresses a recurring pattern in data, but can also express an exceptional pattern.
 
 A pattern must be:
+
 - Valid on data with a certain degree of confidence
 - It can be understood from the syntax and semantic point of view, so that the user can interpret it
 - Previously unknown and potentially useful, so that users can take actions accordingly
@@ -69,6 +73,7 @@ When we distinguish between a manual technique (DW) and an automatic technique i
 The process begins with a huge multi-dimension cube of data, then grouping and selection techniques are adopted, creating a **pattern**.
 
 **Pattern types:**
+
 - Association rules (logical implications of the dataset)
 - Classifiers (classify data according to a set of priori assigned classes)
 - Decision trees (identify the causes that lead to an event, in order of importance)
@@ -101,6 +106,7 @@ A **test set** is used to determine the model accuracy.
 The goal is to reduce the cost of email marketing by defining the set of customers that, with the highest probability, will buy a new product.
 
 Technique:
+
 - Exploit the data collected during the launch of similar products
     - We know which customers bought and which one did not
     - {*buy, not buy*} = **class attribute**
@@ -111,6 +117,7 @@ Technique:
 Predict customers who are willing to go to a competitor.
 
 Technique:
+
 - Use the purchasing data of individual users to find the relevant attributes
 - Label users as {*loyal, not loyal*}
 - Find a pattern that defines loyalty
@@ -124,6 +131,7 @@ Given a set of points, each featuring set of attributes, and having a similarity
 The goal is to spit customers into distinct subsets to target specific marketing activities.
 
 Techniques:
+
 - Gather information about customer lifestyle and geographic location
 - Find clusters of similar customers
 - Measure cluster quality by verifying whether the purchasing patterns of customers belonging to the same cluster are more similar to those of distinct clusters
@@ -140,6 +148,7 @@ Suppose you have discovered this association rule:
 This information can be used to understand what actions to take to increase its sales. 
 
 ## Data Mining Bets
+
 - Scalability
 - Multidimensionality of data set
 - Complexity and heterogeneity of the data
