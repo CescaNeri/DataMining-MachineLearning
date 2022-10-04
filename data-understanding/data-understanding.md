@@ -9,6 +9,7 @@ In data mining, data are composed of collections of objects described by a set o
 In order to perform meaningful analysis, the characteristics of the attributes must be known. The **attribute type** tells us what properties are reflected in the value we use as a measure. 
 
 We can identify 4 types of attributes:
+
 1. **Nominal**-qualitative: different names of value (gender, zip code, ID)
 2. **Ordinal**-qualitative: values enables us to sort objects based on the value of attribute (grade)
 3. **Interval**-quantitative: the difference between the values has a meaning, with a unit of measurement (dates, temperature)
@@ -30,6 +31,7 @@ We can identify 4 types of attributes:
 
 ## Explorative Analysis 
 First step in business and ata understanding. It refers to the preliminary analysis of the data aimed at identify its main characteristics. 
+
 - It helps you choose the best tool for processing and analysis 
 
 ## STATISTICS OVERVIEW
@@ -49,6 +51,7 @@ Percentile visualization through boxplot enables the representation of a distrib
 
 ### Mean
 The mean is the most common measure for locating a set of points.
+
 - Subject to outliers
 - It is preferred to use tee median or a 'controlled' mean 
 
@@ -60,6 +63,7 @@ Range is the difference between the minimum and maximum values taken by the attr
 
 ### Variance and Standard Deviation
 Variance and SD are the most common measures of dispersion of a data set.
+
 - Sensitive to outliers since they are quadratically related to the concept of mean
 
 ![](var-sd.jpg)
@@ -68,6 +72,7 @@ Variance and SD are the most common measures of dispersion of a data set.
 
 The quality of the datasets profoundly affects the chances of finding meaningful patterns.
 The most frequent problems that deteriorate data quality are:
+
 - Noise and outliers (objects with characteristics very different from all other objects in the data set)
 - Missing values (not collecting the data is different from when the attribute is not applicable), how to handle them:
     - Delete the objects that contain them
@@ -78,6 +83,7 @@ The most frequent problems that deteriorate data quality are:
 
 ## Dataset Preprocessing
 Rarely the dataset has the optimal characteristics to be best processed by machine learning algorithms. It is therefore necessary to put in place a series of actions to enable the algorithms of interest to function:
+
 - **Aggregation:** combine two or more attributes into one attribute
 - **Sampling:** main technique to select data
     - Collecting and processing the entire dataset is too expensive and time consuming
@@ -96,7 +102,8 @@ The curve indicates that the more we increase the number of dimensionality, the 
 In the modeling phase, it is important reduce dimensionality.
 
 The goal is to reduce dimensionality and carry out analysis with the highest information amount.
-    - **Principal Component Analysis:** it is a projection method that transforms objects belonging to a p-dimensional space into a k-dimensional space in such way as to preserve maximum information in the initial dimension.
+
+- **Principal Component Analysis:** it is a projection method that transforms objects belonging to a p-dimensional space into a k-dimensional space in such way as to preserve maximum information in the initial dimension.
 - **Attribute creation:** it is a way to reduce the dimensionality of data. The selection usually aims to eliminate redundant. 
 We can use different attribute selection techniques:
     - Exhaustive approaches
@@ -121,6 +128,58 @@ The entropy of a discretization into n intervals depends on how pure each group.
 
 ## Similarity and Dissimilarity
 
+These two concepts are central in Machine Learning, as it is important to group clusters based on similarity and dissimilarity.
+
+Some techniques are stronger with long distances while sometimes, by setting the wrong distance, we will incur in problems.
+
+- **Similarity:** it is a numerical measure expressing the degree of similarity between two objects
+    - Takes values in the range [0, 1]
+
+- **Dissimilarity (distance):** it is a numerical measure expressing the degree of difference between two objects
+    - Takes values in the range [0, 1] or [0, ∞]
+
+![](similarity.jpg)
+
+## Distance
+
+![](distance.jpg)
+
+**Distance Properties**
+Given two objects p and q and a dissimilarity measure d():
+
+- d(p,q) = 0 only if p=q
+- d(p,q) = d(q,p) -> *Symmetry* 
+- d(p,r) + d(p,q) + d(q,r) -> *Triangular inequality*
+
+![](triangular.jpg)
+
+**Similarity Properties**
+Given two objects p and q and a similarity measure s():
+
+- s(p,q) = 1 only if p=q
+- s(p,q) = s(q,p) -> *Symmetry*
+
+**Binary Vector Similarities**
+It is common for attributes describing an object to contain only binary values.
+
+- M01 = the number of attributes where p=0 and q=1
+- M10 = the number of attributes where p=1 and q=0
+- M00 = the number of attributes where p=0 and q=0
+- M11 = the number of attributes where p=1 and q=1
+
+**Cosine Similarity**
+Like Jaccard's index. it does not consider 00 matches, but also allows non-binary vectors to be operated on.
+
+**Similarity with Heterogeneous Attributes**
+In the presence of heterogeneous attributes, it is necessary to compute the similarities separately and then combine them so that their result belongs to the range [0, 1]
+
+
+## Correlation
+The correlation between pairs of objects described by attributes (binary or continuous) is a measure of the existence of a linear relationship between its attributes.
+
+![](correlation.jpg)
+
+![](corr2.jpg)
 
 
 
