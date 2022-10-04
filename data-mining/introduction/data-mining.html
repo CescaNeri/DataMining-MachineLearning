@@ -1,0 +1,916 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.2">
+    
+    
+      
+        <title>Data Mining - CescaNeri/DataMining-MachineLearning</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings1.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings2.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-enum-headings3.css">
+    
+      <link rel="stylesheet" href="../../css/print-site.css">
+    
+      <link rel="stylesheet" href="../../css/print-site-material.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-mining" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../index.html" title="CescaNeri/DataMining-MachineLearning" class="md-header__button md-logo" aria-label="CescaNeri/DataMining-MachineLearning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CescaNeri/DataMining-MachineLearning
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data Mining
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="blue-grey"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/CescaNeri/DataMining-MachineLearning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../index.html" title="CescaNeri/DataMining-MachineLearning" class="md-nav__button md-logo" aria-label="CescaNeri/DataMining-MachineLearning" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 22a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-6v7L9.5 7.5 7 9V2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12Z"/></svg>
+
+    </a>
+    CescaNeri/DataMining-MachineLearning
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/CescaNeri/DataMining-MachineLearning" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html" class="md-nav__link">
+        Data Mining and Machine Learning
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Data mining
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data mining" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Data mining
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Data understanding
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Data understanding" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Data understanding
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-understanding/data-understanding.html" class="md-nav__link">
+        Data Understanding & Preparation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Decision tree
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Decision tree" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Decision tree
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decision-tree/model.html" class="md-nav__link">
+        Decision Tree
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Introduction
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Introduction" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Introduction
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Data Mining
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="data-mining.html" class="md-nav__link md-nav__link--active">
+        Data Mining
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#artificial-intelligence-machine-learning-and-data-mining" class="md-nav__link">
+    Artificial Intelligence, Machine Learning and Data Mining
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining-definition" class="md-nav__link">
+    Data Mining - definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    Analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bi-adoption-path" class="md-nav__link">
+    BI adoption path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    Pattern
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining-applications" class="md-nav__link">
+    Data Mining Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-definition" class="md-nav__link">
+    Classification - Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-example" class="md-nav__link">
+    Classification example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-example" class="md-nav__link">
+    Clustering example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#association-rules-example" class="md-nav__link">
+    Association Rules example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining-bets" class="md-nav__link">
+    Data Mining Bets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crisp-methodology" class="md-nav__link">
+    CRISP methodology
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../print_page.html" class="md-nav__link">
+        Print as PDF
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#artificial-intelligence-machine-learning-and-data-mining" class="md-nav__link">
+    Artificial Intelligence, Machine Learning and Data Mining
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining-definition" class="md-nav__link">
+    Data Mining - definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics" class="md-nav__link">
+    Analytics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bi-adoption-path" class="md-nav__link">
+    BI adoption path
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern" class="md-nav__link">
+    Pattern
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining-applications" class="md-nav__link">
+    Data Mining Applications
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-definition" class="md-nav__link">
+    Classification - Definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#classification-example" class="md-nav__link">
+    Classification example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clustering-example" class="md-nav__link">
+    Clustering example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#association-rules-example" class="md-nav__link">
+    Association Rules example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-mining-bets" class="md-nav__link">
+    Data Mining Bets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#crisp-methodology" class="md-nav__link">
+    CRISP methodology
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+  
+                
+  <a href="https://github.com/CescaNeri/DataMining-MachineLearning/edit/main/data-mining/introduction/data-mining.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="data-mining">Data Mining</h1>
+<p>The amount of data stored on computer is constantly increasing, coming from:
+- IoT data
+- Social data
+- Data on purchases
+- Banking and credit card transaction</p>
+<p>The first step is to collect data in a data set. This step can be automated through artificial intelligence increasing the analytical power.</p>
+<p>From on side, data is more and more and on the other side, hardware becomes more powerful and cheaper each day.</p>
+<p>At the same time, managers are more and more willing to rely on data analysis for their business decisions.
+The information resource is a precious asset to overcoming competitors. </p>
+<h2 id="artificial-intelligence-machine-learning-and-data-mining">Artificial Intelligence, Machine Learning and Data Mining</h2>
+<p>Although strongly interrelates, the term machine learning is formally distinct from the term Data Mining which indicates the computational process of pattern discovery in large datasets using machine learning methods, artificial intelligence, statistics and databases. </p>
+<h2 id="data-mining-definition">Data Mining - definition</h2>
+<p>Complex extraction of implicit, previously unknown and potentially useful data from the information.
+Exploration and analysis, using automated and semi-automatic systems, of large amounts of data in order to find significant patterns through statistics. </p>
+<p>We do not just need to find results, but we need results to be USEFUL. </p>
+<h2 id="analytics">Analytics</h2>
+<p>ANalytics refers to software used to discover, understand and share relevant pattern in data.
+Analytics are based on the concurrent use of statistics, machine learning and operational research techniques, often exploiting visualization techniques. </p>
+<p><img alt="" src="BI.jpg" /></p>
+<p>Prescriptive systems generale much value but it is extremely complex. Companies should start simple, adopting simple descriptive analytics solutions, and then move on. 
+It is risky to skip intermediate steps.</p>
+<h2 id="bi-adoption-path">BI adoption path</h2>
+<p>When we decide to digitalize a company, the adoption of BI solutions is incremental and rarely allows steps to be skipped.
+This is because it is risky, costly and useless to adopts advanced solutions before completely exploiting simple ones. </p>
+<p>The goal is to create a <strong>data-driven company</strong>, where managers are supported by data. 
+- Decisions are based on quantitative rather than qualitative knowledge.
+- Process and knowledge are an asset of the company and are not lost if managers change</p>
+<p><em>The gap between a data-driven decision and a good decision is a good manager</em></p>
+<p>Adopting a data-driven mindset goes far beyond adopting a business intelligence solution and entails:
+1. Create a data culture
+2. Change the mindset of managers
+3. Change processes
+4. Improve the quality of all the data</p>
+<p><strong>Digitalization</strong> is a journey that involves three main dimensions:</p>
+<p><img alt="" src="DT.jpg" /></p>
+<h2 id="pattern">Pattern</h2>
+<p>A pattern is a synthetic representation rich in semantics of a set of data. It usually expresses a recurring pattern in data, but can also express an exceptional pattern.</p>
+<p>A pattern must be:
+- Valid on data with a certain degree of confidence
+- It can be understood from the syntax and semantic point of view, so that the user can interpret it
+- Previously unknown and potentially useful, so that users can take actions accordingly</p>
+<p>When we distinguish between a manual technique (DW) and an automatic technique is the creation of a small subset of data which is rich in semantics.</p>
+<p>The process begins with a huge multi-dimension cube of data, then grouping and selection techniques are adopted, creating a <strong>pattern</strong>.</p>
+<p><strong>Pattern types:</strong>
+- Association rules (logical implications of the dataset)
+- Classifiers (classify data according to a set of priori assigned classes)
+- Decision trees (identify the causes that lead to an event, in order of importance)
+- Clustering (group elements depending on their characteristics)
+- Time series (detection of recurring or atypical patterns in complex data sequences)</p>
+<h2 id="data-mining-applications">Data Mining Applications</h2>
+<p><strong>Predictive Systems</strong>
+Exploit some features to predict the unknown values of other features (classification and regression).</p>
+<p><strong>Descriptive Systems</strong>
+Find user-readable patterns that can be understood by human users (clustering, association rules, sequential patter).</p>
+<h2 id="classification-definition">Classification - Definition</h2>
+<p>Given a <strong>record</strong> set, where each record is composed by a set of attributes (one of them represents the class of the record), find a model for the class attribute expressing the attribute value as a function of the remaining attributes.</p>
+<p><em>Given a feature (defined at priori), define weather a user belongs to that feature</em></p>
+<p>This model must work even when the record is not given. Unclassified record must be assigned to a class in the most accurate way.</p>
+<p>A <strong>test set</strong> is used to determine the model accuracy.</p>
+<p><img alt="" src="test.jpg" /></p>
+<h2 id="classification-example">Classification example</h2>
+<p><strong>Direct Marketing:</strong>
+The goal is to reduce the cost of email marketing by defining the set of customers that, with the highest probability, will buy a new product.</p>
+<p>Technique:
+- Exploit the data collected during the launch of similar products
+    - We know which customers bought and which one did not
+    - {<em>buy, not buy</em>} = <strong>class attribute</strong>
+- Collect all the available information about each customers
+- Use such information as an input to train the model</p>
+<p><strong>Churn Detection</strong>
+Predict customers who are willing to go to a competitor.</p>
+<p>Technique:
+- Use the purchasing data of individual users to find the relevant attributes
+- Label users as {<em>loyal, not loyal</em>}
+- Find a pattern that defines loyalty</p>
+<h2 id="clustering-example">Clustering example</h2>
+<p>Given a set of points, each featuring set of attributes, and having a similarity measure between points, find subset of points such that:
+<em>points belonging to a cluster are more similar to each other than those belonging to other clusters</em></p>
+<p><strong>Marketing Segmentation</strong>
+The goal is to spit customers into distinct subsets to target specific marketing activities.</p>
+<p>Techniques:
+- Gather information about customer lifestyle and geographic location
+- Find clusters of similar customers
+- Measure cluster quality by verifying whether the purchasing patterns of customers belonging to the same cluster are more similar to those of distinct clusters</p>
+<h2 id="association-rules-example">Association Rules example</h2>
+<p>Given a set of records each consisting of multiple elements belonging to a given collection.
+It produces rules of dependence that predict the occurrence of one of the elements in the presence of others.</p>
+<p><strong>Marketing Sales Promotion</strong>
+Suppose you have discovered this association rule:
+{<em>Bagels,...} -&gt; {</em>Potato chips*}</p>
+<p>This information can be used to understand what actions to take to increase its sales. </p>
+<h2 id="data-mining-bets">Data Mining Bets</h2>
+<ul>
+<li>Scalability</li>
+<li>Multidimensionality of data set</li>
+<li>Complexity and heterogeneity of the data</li>
+<li>Data quality</li>
+<li>Data properties</li>
+<li>Privacy keeping</li>
+<li>Processing in real-time</li>
+</ul>
+<h2 id="crisp-methodology">CRISP methodology</h2>
+<p>A data mining project requires a structured approach in order to choose the best algorithm.</p>
+<p><strong>CRISP-DM</strong> methodology is the most used technique. It is one of the most structures proposals to define the fundamental steps of a data mining project. </p>
+<p><img alt="" src="crisp.jpg" /></p>
+<p>The six stages of the life cycle are not strictly sequential, indeed, it is often necessary.</p>
+<ol>
+<li><strong>Business understanding</strong> (understand the application domain): understanding project goals from users' point of view, translate the user's problem into a data mining problem and define a project plan.<ul>
+<li>Get an idea about the business domain and the data mining approach to adopt.</li>
+</ul>
+</li>
+<li><strong>Data understanding</strong>: preliminary data collection aimed at identifying quality problems and conducting preliminary analysis to identify the salient characteristics.</li>
+<li><strong>Data preparation</strong>: tasks needed to create the final dataset, selecting attributes and records, transforming and cleaning data.<ul>
+<li>Prepare the data for ML tasks (clean, complete missing data, create new features)</li>
+</ul>
+</li>
+<li><strong>Model creation</strong>: data mining techniques are applied to the dataset in order to identify what makes the model more accurate.</li>
+<li><strong>Evaluation of model and results</strong>: the model obtained from the previous phase are analyzed to verify that they are sufficiently precise and robust to respond adequately to the user's objectives.</li>
+<li><strong>Deployment</strong>: the built-in model and acquired knowledge must be made available to users.<ul>
+<li>Change the software and processes to include new AI functionalities</li>
+</ul>
+</li>
+</ol>
+<p>Different classes of data mining use different algorithms so the evaluation changes accordingly. </p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 4, 2022 10:16:21</span>
+      
+        <br>
+        Created:
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">September 20, 2022 07:20:18</span>
+      
+    
+  </small>
+</div>
+
+
+
+
+              
+
+  
+    <div class="md-source-date">
+      <small>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:104086181+cescaneri@users.noreply.github.com'>Francesca Neri</a></span>
+      </small>
+    </div>
+  
+
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../decision-tree/model.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Decision Tree" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Decision Tree
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+<script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+
+<script src="https://unpkg.com/iframe-worker/polyfill"></script>
+<script src="../../search/search_index.js"></script>
+
+
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+        <script src="../../js/print-site.js"></script>
+      
+        <script src="../../js/arithmatex.config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
