@@ -438,6 +438,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#classification-errors" class="md-nav__link">
+    Classification Errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimate-generalization-error" class="md-nav__link">
+    Estimate Generalization Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-test-set" class="md-nav__link">
+    Building the Test Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c45-j48-on-weka" class="md-nav__link">
+    C4.5 (J48 on Weka)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -522,6 +550,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#classification-errors" class="md-nav__link">
+    Classification Errors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimate-generalization-error" class="md-nav__link">
+    Estimate Generalization Error
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#building-the-test-set" class="md-nav__link">
+    Building the Test Set
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#c45-j48-on-weka" class="md-nav__link">
+    C4.5 (J48 on Weka)
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -589,7 +645,7 @@ It is a recursive approach that progressively subdivides a set of Dt records int
 </li>
 </ul>
 </li>
-<li>The criterion defining the best split (it must allow you ti determine more pure classes, using a <strong>measure of purity</strong>)<ul>
+<li>The criterion defining the best split (it must allow you to determine more pure classes, using a <strong>measure of purity</strong>)<ul>
 <li><img alt="" src="impurity.jpg" /></li>
 </ul>
 </li>
@@ -630,17 +686,58 @@ They assume that FN and FP have the same weight, thus they are cost-intensive, b
 <h2 id="roc-space-receiver-operator-characteristics">ROC Space (Receiver Operator Characteristics)</h2>
 <p>Roc graohs are two-dimensional graphs that depict relative tradeoffs between benefits (TP) and costs (FP) induced by a classifier. We distinguish between:</p>
 <ul>
-<li><strong>Probabilistic classifiers</strong> return a score that is not necessarily a sensu strictu probability but represents the degree to which an object is a member of one particular class rather than another one
+<li><strong>Probabilistic classifiers</strong> return a score that is not necessarily a <em>sensu strictu</em> probability but represents the degree to which an object is a member of one particular class rather than another one
 -<strong>Discrete classifier</strong> predicts only the classes to which a test object belongs</li>
 </ul>
 <p><img alt="" src="ROC.jpg" /></p>
+<h2 id="classification-errors">Classification Errors</h2>
+<ul>
+<li><strong>Training error:</strong> mistakes that are made on the training set</li>
+<li><strong>Generalization error:</strong>  errors made on the test set</li>
+<li><strong>Underfitting:</strong> the model is too simple and does not allow a good classification or set training or test set</li>
+<li><strong>Overfitting:</strong> the model is too complex, it allows a good classification of the training set, but a poor classification of the test set<ul>
+<li>Due to noise (the boundaries of the areas are distorted)</li>
+<li>Due to the reduced size of the training set</li>
+</ul>
+</li>
+</ul>
+<p><strong>How to handle overfitting</strong></p>
+<ul>
+<li>Pre-pruning: stop splitting before you reach a deep tree. A node can be split further if:<ul>
+<li>Nodes does not contain instances</li>
+<li>All instances belong to the same class</li>
+<li>All attributes have the same values</li>
+</ul>
+</li>
+<li>Post-pruning: run all possible splits to reduce the generalization error</li>
+</ul>
+<p>Post-pruning is more effective but involves more computational cost. It is based on the evidence of the result of a complete tree.</p>
+<h2 id="estimate-generalization-error">Estimate Generalization Error</h2>
+<p>A decision tree should minimize the error on the real data set, unfortunately during construction, only the training set is available.</p>
+<p>The methods for estimating the generalization error are:</p>
+<ul>
+<li>Optimistic approach</li>
+<li>Pessimistic approach</li>
+<li>Minimum Description Length (choose the model that minimizes the cost to describe a classification)</li>
+<li>Using the test set</li>
+</ul>
+<h2 id="building-the-test-set">Building the Test Set</h2>
+<ul>
+<li><strong>Holdout:</strong> use 2/3 of training records and 1/3 for validation</li>
+<li><strong>Random subsampling:</strong> repeated execution of the holdout method in which the training dataset is randomly selected</li>
+<li><strong>Cross validation:</strong> partition the records into separate k subdivisions, run the training on k-1 divisions and test the reminder, repeat the test k times and calculate the average accuracy</li>
+<li><strong>Bootstrap:</strong> The extracted records are replaced and records that are excluded form the validation set. This method does not create a new dataset with more information, but it can stabilize the obtained results of the available dataset.</li>
+</ul>
+<h2 id="c45-j48-on-weka">C4.5 (J48 on Weka)</h2>
+<p>This algorithm exploits the GainRatio approach. It manages continuous attributes by determining a split point dividing the range of values into two.
+It manages data with missed values and run post pruning of the created tree.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 4, 2022 10:16:21</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 4, 2022 12:54:22</span>
       
         <br>
         Created:
