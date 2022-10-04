@@ -637,11 +637,13 @@
                             Data Mining <a class='headerlink' href='#section-data-mining' title='Permanent link'>↵</a>
                         </h1>
                         <section class="print-page" id="data-mining-introduction-data-mining"><h1 id="data-mining-introduction-data-mining-data-mining">Data Mining</h1>
-<p>The amount of data stored on computer is constantly increasing, coming from:
-- IoT data
-- Social data
-- Data on purchases
-- Banking and credit card transaction</p>
+<p>The amount of data stored on computer is constantly increasing, coming from:</p>
+<ul>
+<li>IoT data</li>
+<li>Social data</li>
+<li>Data on purchases</li>
+<li>Banking and credit card transaction</li>
+</ul>
 <p>The first step is to collect data in a data set. This step can be automated through artificial intelligence increasing the analytical power.</p>
 <p>From on side, data is more and more and on the other side, hardware becomes more powerful and cheaper each day.</p>
 <p>At the same time, managers are more and more willing to rely on data analysis for their business decisions.
@@ -661,31 +663,39 @@ It is risky to skip intermediate steps.</p>
 <h2 id="data-mining-introduction-data-mining-bi-adoption-path">BI adoption path</h2>
 <p>When we decide to digitalize a company, the adoption of BI solutions is incremental and rarely allows steps to be skipped.
 This is because it is risky, costly and useless to adopts advanced solutions before completely exploiting simple ones. </p>
-<p>The goal is to create a <strong>data-driven company</strong>, where managers are supported by data. 
-- Decisions are based on quantitative rather than qualitative knowledge.
-- Process and knowledge are an asset of the company and are not lost if managers change</p>
+<p>The goal is to create a <strong>data-driven company</strong>, where managers are supported by data. </p>
+<ul>
+<li>Decisions are based on quantitative rather than qualitative knowledge.</li>
+<li>Process and knowledge are an asset of the company and are not lost if managers change</li>
+</ul>
 <p><em>The gap between a data-driven decision and a good decision is a good manager</em></p>
-<p>Adopting a data-driven mindset goes far beyond adopting a business intelligence solution and entails:
-1. Create a data culture
-2. Change the mindset of managers
-3. Change processes
-4. Improve the quality of all the data</p>
+<p>Adopting a data-driven mindset goes far beyond adopting a business intelligence solution and entails:</p>
+<ol>
+<li>Create a data culture</li>
+<li>Change the mindset of managers</li>
+<li>Change processes</li>
+<li>Improve the quality of all the data</li>
+</ol>
 <p><strong>Digitalization</strong> is a journey that involves three main dimensions:</p>
 <p><img alt="" src="data-mining/introduction/DT.jpg" /></p>
 <h2 id="data-mining-introduction-data-mining-pattern">Pattern</h2>
 <p>A pattern is a synthetic representation rich in semantics of a set of data. It usually expresses a recurring pattern in data, but can also express an exceptional pattern.</p>
-<p>A pattern must be:
-- Valid on data with a certain degree of confidence
-- It can be understood from the syntax and semantic point of view, so that the user can interpret it
-- Previously unknown and potentially useful, so that users can take actions accordingly</p>
+<p>A pattern must be:</p>
+<ul>
+<li>Valid on data with a certain degree of confidence</li>
+<li>It can be understood from the syntax and semantic point of view, so that the user can interpret it</li>
+<li>Previously unknown and potentially useful, so that users can take actions accordingly</li>
+</ul>
 <p>When we distinguish between a manual technique (DW) and an automatic technique is the creation of a small subset of data which is rich in semantics.</p>
 <p>The process begins with a huge multi-dimension cube of data, then grouping and selection techniques are adopted, creating a <strong>pattern</strong>.</p>
-<p><strong>Pattern types:</strong>
-- Association rules (logical implications of the dataset)
-- Classifiers (classify data according to a set of priori assigned classes)
-- Decision trees (identify the causes that lead to an event, in order of importance)
-- Clustering (group elements depending on their characteristics)
-- Time series (detection of recurring or atypical patterns in complex data sequences)</p>
+<p><strong>Pattern types:</strong></p>
+<ul>
+<li>Association rules (logical implications of the dataset)</li>
+<li>Classifiers (classify data according to a set of priori assigned classes)</li>
+<li>Decision trees (identify the causes that lead to an event, in order of importance)</li>
+<li>Clustering (group elements depending on their characteristics)</li>
+<li>Time series (detection of recurring or atypical patterns in complex data sequences)</li>
+</ul>
 <h2 id="data-mining-introduction-data-mining-data-mining-applications">Data Mining Applications</h2>
 <p><strong>Predictive Systems</strong>
 Exploit some features to predict the unknown values of other features (classification and regression).</p>
@@ -700,27 +710,35 @@ Find user-readable patterns that can be understood by human users (clustering, a
 <h2 id="data-mining-introduction-data-mining-classification-example">Classification example</h2>
 <p><strong>Direct Marketing:</strong>
 The goal is to reduce the cost of email marketing by defining the set of customers that, with the highest probability, will buy a new product.</p>
-<p>Technique:
-- Exploit the data collected during the launch of similar products
-    - We know which customers bought and which one did not
-    - {<em>buy, not buy</em>} = <strong>class attribute</strong>
-- Collect all the available information about each customers
-- Use such information as an input to train the model</p>
+<p>Technique:</p>
+<ul>
+<li>Exploit the data collected during the launch of similar products<ul>
+<li>We know which customers bought and which one did not</li>
+<li>{<em>buy, not buy</em>} = <strong>class attribute</strong></li>
+</ul>
+</li>
+<li>Collect all the available information about each customers</li>
+<li>Use such information as an input to train the model</li>
+</ul>
 <p><strong>Churn Detection</strong>
 Predict customers who are willing to go to a competitor.</p>
-<p>Technique:
-- Use the purchasing data of individual users to find the relevant attributes
-- Label users as {<em>loyal, not loyal</em>}
-- Find a pattern that defines loyalty</p>
+<p>Technique:</p>
+<ul>
+<li>Use the purchasing data of individual users to find the relevant attributes</li>
+<li>Label users as {<em>loyal, not loyal</em>}</li>
+<li>Find a pattern that defines loyalty</li>
+</ul>
 <h2 id="data-mining-introduction-data-mining-clustering-example">Clustering example</h2>
 <p>Given a set of points, each featuring set of attributes, and having a similarity measure between points, find subset of points such that:
 <em>points belonging to a cluster are more similar to each other than those belonging to other clusters</em></p>
 <p><strong>Marketing Segmentation</strong>
 The goal is to spit customers into distinct subsets to target specific marketing activities.</p>
-<p>Techniques:
-- Gather information about customer lifestyle and geographic location
-- Find clusters of similar customers
-- Measure cluster quality by verifying whether the purchasing patterns of customers belonging to the same cluster are more similar to those of distinct clusters</p>
+<p>Techniques:</p>
+<ul>
+<li>Gather information about customer lifestyle and geographic location</li>
+<li>Find clusters of similar customers</li>
+<li>Measure cluster quality by verifying whether the purchasing patterns of customers belonging to the same cluster are more similar to those of distinct clusters</li>
+</ul>
 <h2 id="data-mining-introduction-data-mining-association-rules-example">Association Rules example</h2>
 <p>Given a set of records each consisting of multiple elements belonging to a given collection.
 It produces rules of dependence that predict the occurrence of one of the elements in the presence of others.</p>
