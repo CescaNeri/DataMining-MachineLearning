@@ -10,6 +10,7 @@ They discovered that customers who did not train well, eventually drop out from 
 Therefore, the goal was to model customers' training sessions in order to predict those who did not train well and prevent them from dropping out.
 
 Steps:
+
 - Customers have s list of exercises
 - The system records the exercises (and repetition) did during the workout
 - The system matches the exercises 
