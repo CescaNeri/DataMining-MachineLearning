@@ -53,7 +53,7 @@ Starting from the basic logic to completely define an algorithm for building dec
     - Continuous (the split condition can be expressed as a Boolean with N-ary split and as a binary comparison test with binary-split)
         - Static (discretization takes place only once before applying the algorithm)
         - DYnamic (discretization takes place at each recursion)
-- The criterion defining the best split (it must allow you ti determine more pure classes, using a **measure of purity**)
+- The criterion defining the best split (it must allow you to determine more pure classes, using a **measure of purity**)
     - ![](impurity.jpg)
 - The criterion for interrupting splitting (AND conditions, if one applies, the splitting stops)
     - When all its records belong to the same class
@@ -97,8 +97,51 @@ They assume that FN and FP have the same weight, thus they are cost-intensive, b
 ## ROC Space (Receiver Operator Characteristics)
 Roc graohs are two-dimensional graphs that depict relative tradeoffs between benefits (TP) and costs (FP) induced by a classifier. We distinguish between:
 
-- **Probabilistic classifiers** return a score that is not necessarily a sensu strictu probability but represents the degree to which an object is a member of one particular class rather than another one
+- **Probabilistic classifiers** return a score that is not necessarily a *sensu strictu* probability but represents the degree to which an object is a member of one particular class rather than another one
 -**Discrete classifier** predicts only the classes to which a test object belongs
 
 ![](ROC.jpg)
+
+## Classification Errors
+
+- **Training error:** mistakes that are made on the training set
+- **Generalization error:**  errors made on the test set
+- **Underfitting:** the model is too simple and does not allow a good classification or set training or test set
+- **Overfitting:** the model is too complex, it allows a good classification of the training set, but a poor classification of the test set
+    - Due to noise (the boundaries of the areas are distorted)
+    - Due to the reduced size of the training set
+
+**How to handle overfitting**
+
+- Pre-pruning: stop splitting before you reach a deep tree. A node can be split further if:
+    - Nodes does not contain instances
+    - All instances belong to the same class
+    - All attributes have the same values
+- Post-pruning: run all possible splits to reduce the generalization error
+
+Post-pruning is more effective but involves more computational cost. It is based on the evidence of the result of a complete tree.
+
+## Estimate Generalization Error
+
+A decision tree should minimize the error on the real data set, unfortunately during construction, only the training set is available.
+
+The methods for estimating the generalization error are:
+
+- Optimistic approach
+- Pessimistic approach
+- Minimum Description Length (choose the model that minimizes the cost to describe a classification)
+- Using the test set
+
+## Building the Test Set
+
+- **Holdout:** use 2/3 of training records and 1/3 for validation
+- **Random subsampling:** repeated execution of the holdout method in which the training dataset is randomly selected
+- **Cross validation:** partition the records into separate k subdivisions, run the training on k-1 divisions and test the reminder, repeat the test k times and calculate the average accuracy
+- **Bootstrap:** The extracted records are replaced and records that are excluded form the validation set. This method does not create a new dataset with more information, but it can stabilize the obtained results of the available dataset.
+
+## C4.5 (J48 on Weka)
+This algorithm exploits the GainRatio approach. It manages continuous attributes by determining a split point dividing the range of values into two.
+It manages data with missed values and run post pruning of the created tree.
+
+
 
