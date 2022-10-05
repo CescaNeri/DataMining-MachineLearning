@@ -12,8 +12,11 @@
     - Case studies analysis
 
 - **Machine Learning**: Prof. Guido Borghi - 18h
-    - Neural network
-    - Pattern recognition
+    - Introduction to AI
+    - Machine Learning and Deep Learning
+    - Data acquisition and Processing
+    - Model Training
+    - Metrics
 
 ## Assessment Method - EXAM
 
