@@ -17,6 +17,9 @@
     - Data acquisition and Processing
     - Model Training
     - Metrics
+    - LIBRARIES:
+        - Scikit-learn (ML)
+        - Tensofrflow (DL)
 
 ## Assessment Method - EXAM
 
