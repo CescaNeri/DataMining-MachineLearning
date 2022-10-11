@@ -1,6 +1,6 @@
 # Rule-Based Classifier
 
-The basic idea is to classify records using rule sets of the type "*if .. then*". The condition used with 'if' is called the antecedent and predicted class of each rule is called the consequent.
+The basic idea is to classify records using rule sets of the type "*if .. then*". The condition used with 'if' is called the antecedent while the predicted class of each rule is called the consequent.
 
 A rule has the form: (condition) -> y
 
@@ -10,6 +10,7 @@ Building a model means identifying a set of rules
 
 ## Coverage and Accuracy
 
+We can have very accurate rules but with low coverage, which is not that relevant.
 Given a dataset D and a classification rule A -> y, we define:
 
 - **Coverage** as the portion of records satisfying the antecedent of the rule
@@ -36,7 +37,7 @@ A set of rules R has **exhaustive coverage** if there is one rule for each combi
 
 ## Sequential Covering
 
-```
+```python
 set R = Ø
 for each class y ∈ Y 0 y k do
     stop=FALSE;
@@ -62,4 +63,38 @@ Deleting instances from the training set serves the purpose of:
 - Incorrectly classified instances: to avoid underestimating the accuracy of the next rule
 
 ![](dropping.jpg)
+
+## Learn-One-Rule
+
+We want something that is general (even with a lower accuracy). The goal of the algorithm is to find a rule that covers as many possible examples and as few as possible negative examples.
+
+Rule are constructed by progressively considering a new possible predicate.
+
+- In order to choose which predicate to add, a criterion is needed:
+    - n = number of instances covered by the rule
+    - nr = number of instances properly classified by the rule
+    - k = number of classes
+
+**Accuracy(r) = nr/n**
+
+Some metrics (like the **FoilGrain**) supports the rule by identifying the number of positive examples covered by the rule.
+
+**Stop Criterion**: as soon as the rule is not relevant anymore, stop it.
+
+**Rule Pruning**: it aims at simplifying tules to improve rule generalization error.
+It can be useful given that the construction approach is greedy.
+
+*example: remove the predicate whose removal results in the greatest improvement in error rate on the validation set*
+
+## The RIPPER Method
+
+It is an approach based on sequential covering for 2-class problem and it is used to choose one of the classes as a positive class and the other as a negative class.
+
+the idea is to compute the description length (cost for transmitting the data set from one user to another) and if it exceeds the threshold, we should sthop.
+
+![](indirect.jpg)
+
+
+
+
 
