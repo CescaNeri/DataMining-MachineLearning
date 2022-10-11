@@ -4,4 +4,5 @@
 * [Rule-Based Classifier](data-mining/rule-based-classifier/)
 * [Instance-Based CLassifier](data-mining/instance-based-classifier/)
 * [Machine Learning](machine-learning/introduction/)
+* [DM - LAB](data-mining/weka-lab/)
 * [ML - LAB](machine-learning/LAB/)
