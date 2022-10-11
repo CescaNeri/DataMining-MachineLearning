@@ -1,1 +1,0 @@
-* [Instance-Based Classifier](instance-based.md)
