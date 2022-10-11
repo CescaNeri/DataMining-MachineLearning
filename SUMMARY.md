@@ -2,5 +2,6 @@
 * [Data Understanding](data-mining/data-understanding/)
 * [Decision Tree](data-mining/decision-tree/)
 * [Rule-Based Classifier](data-mining/rule-based-classifier/)
+* [Instance-Based CLassifier](data-mining/instance-based-classifier/)
 * [Machine Learning](machine-learning/introduction/)
 * [ML - LAB](machine-learning/LAB/)
