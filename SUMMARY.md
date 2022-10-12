@@ -3,5 +3,6 @@
 * [Decision Tree](data-mining/decision-tree/)
 * [Classifier Models](data-mining/classifiers/)
 * [Machine Learning](machine-learning/introduction/)
+* [Data Acquisition and Processing](machine-learning/data-acquisition/)
 * [DM - LAB](data-mining/weka-lab/)
 * [ML - LAB](machine-learning/LAB/)
