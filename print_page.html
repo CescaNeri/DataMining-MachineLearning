@@ -561,6 +561,34 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="machine-learning/data-acquisition/data-types.html" class="md-nav__link">
+        Data Types
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="machine-learning/data-acquisition/data-preparation.html" class="md-nav__link">
+        Data Preparation
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -834,6 +862,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#machine-learning-data-acquisition-data-types" class="md-nav__link">
+    10. Data Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-data-acquisition-data-preparation" class="md-nav__link">
+    11. Data Preparation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -849,7 +891,7 @@
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    10. Weka
+    12. Weka
   </a>
   
 </li>
@@ -869,7 +911,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    11. Lab Notes
+    13. Lab Notes
   </a>
   
 </li>
@@ -1047,6 +1089,20 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#machine-learning-data-acquisition-data-types" class="md-nav__link">
+    10. Data Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#machine-learning-data-acquisition-data-preparation" class="md-nav__link">
+    11. Data Preparation
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1062,7 +1118,7 @@
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    10. Weka
+    12. Weka
   </a>
   
 </li>
@@ -1082,7 +1138,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    11. Lab Notes
+    13. Lab Notes
   </a>
   
 </li>
@@ -1871,7 +1927,69 @@ You can define a threshold above which a specific pattern is assigned.</p>
 <li>The business process produces huge amounts of data (it is impossible to acquire all the data due to physical limitation)</li>
 <li>Sometimes companies have a lot of old data in their databases</li>
 <li>In many business processes it is unclear understanding which data is possible to collect or which data is really useful for the business</li>
-</ul></section><h1 class='nav-section-title-end'>Ended: Data Acquisition and Processing</h1>
+</ul></section><section class="print-page" id="machine-learning-data-acquisition-data-types"><h1 id="machine-learning-data-acquisition-data-types-data-types">Data Types</h1>
+<p>In general, there are 4 types of data:</p>
+<ol>
+<li><strong>Numerical:</strong><ul>
+<li>Values associated with measurable characteristics</li>
+<li>Continuous (subject to ordering)</li>
+<li>Representable as numerical vectors</li>
+</ul>
+</li>
+<li><strong>Categorical:</strong><ul>
+<li>Qualitative characteristics</li>
+<li>Presence or absence of a characteristic</li>
+<li>Sometimes subject to sorting</li>
+<li>Widely used in Data Mining</li>
+</ul>
+</li>
+<li><strong>Sequences:</strong><ul>
+<li>Sequential patterns with spatial or temporal relationships</li>
+<li>With a variable length</li>
+<li>Position in the sequence and relationship with predecessors and successors are important</li>
+</ul>
+</li>
+<li><strong>Structured data:</strong><ul>
+<li>Outputs organized in complex structures such as trees and graphs</li>
+</ul>
+</li>
+</ol>
+<h2 id="machine-learning-data-acquisition-data-types-images">Images</h2>
+<p>An image is a <strong>matrix of values</strong> in which each cell is referred as pixel and each pixel contains the value of the brightness.</p>
+<p><img alt="" src="machine-learning/data-acquisition/pixel.jpg" /></p>
+<p>In <strong>color images</strong>, each pixel contains 3 values that represent the color components, referred as channels.
+The content of channels are related to the color space (the convention used to define colors).</p>
+<ul>
+<li><strong>RGB color space</strong>: 3 values indicate the value of three components (Red, Gree and Blue).</li>
+</ul>
+<h2 id="machine-learning-data-acquisition-data-types-image-formats">Image formats</h2>
+<p><img alt="" src="machine-learning/data-acquisition/formats.jpg" /></p></section><section class="print-page" id="machine-learning-data-acquisition-data-preparation"><h1 id="machine-learning-data-acquisition-data-preparation-data-preparation">Data Preparation</h1>
+<p>Once obtained data for our Machine Learning system, it is necessary to prepare them.</p>
+<p>They are organized as follows:</p>
+<ul>
+<li><strong>Training set</strong> (data on which the model automatically learns during the learning phase)</li>
+<li><strong>Validation set</strong> (part of the training set in which hyper-parameters are tuned)</li>
+<li><strong>Training set</strong> (data on which the model is tested during testing phase in order to model effectiveness through qualitative and quantitative numerical measures)</li>
+</ul>
+<p><img alt="" src="machine-learning/data-acquisition/data-prep.jpg" /></p>
+<h2 id="machine-learning-data-acquisition-data-preparation-deployment">Deployment</h2>
+<p>Once the previous phases have been completed, the ML system can be released for its effective use.</p>
+<p>Normally, once the model is released, it no longer goes through training and testing phases.</p>
+<p><strong>Different ways to train-val-test</strong></p>
+<p>We can identify alternatives approaches adopted by choice or imposed by context:</p>
+<ol>
+<li><strong>Batch</strong>: the training is carried out only once on a given training set.</li>
+<li><strong>Incremental</strong>: following the initial training, further training sessions are possible</li>
+<li><strong>Natural</strong>: this is the closest case ti the human learning process</li>
+</ol>
+<h2 id="machine-learning-data-acquisition-data-preparation-different-ways-of-learning">Different Ways of Learning</h2>
+<p>Not all data is always annotated. Depending on whether they are annotated, we can define different types of learning:</p>
+<ul>
+<li>Annotated data -&gt; <strong>Supervised Learning</strong></li>
+<li>Not annotated data -&gt; <strong>Unsupervised Learning</strong></li>
+<li>Partially annotated data -&gt; <strong>Semi-supervised Learning</strong></li>
+</ul>
+<p>Specific algorithms correspond to each of these areas. Usually, the presence of annotations helps and simplifies the development of ML algorithms. The best performances are usually obtained with supervised trained algorithms.</p></section><h1 class='nav-section-title-end'>Ended: Data Acquisition and Processing</h1>
                         <h1 class='nav-section-title' id='section-dm-lab'>
                             DM - LAB <a class='headerlink' href='#section-dm-lab' title='Permanent link'>↵</a>
                         </h1>
