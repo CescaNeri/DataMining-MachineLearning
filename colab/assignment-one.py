@@ -74,14 +74,14 @@ def centroid_square(figure):
   return (round(a/2), round(b/2))
 
 def centroid_rhombus(figure):
-  a = np.array((figure[0], figure[1]))
-  b = np.array((figure[2], figure[3]))
-  c = np.array((figure[4], figure[5]))
-  d = np.array((figure[6], figure[7]))
-
-  d1 = distance(a, c)
-  d2 = distance(b, d)
-  return (round(d2/2), round(d1/2))
+  sumx = []
+  sumy = []
+  for pos in range(len(figure)):
+    if pos%2 == 0:
+      sumx.append(figure[pos])
+    else:
+      sumy.append(figure[pos])
+  return (round(sum(sumx)/4), round(sum(sumy)/4))
 
 with open(file_path, 'r') as f:
     lines = f.readlines()
