@@ -57,5 +57,3 @@ Also, irrelevant and replicated attributes can create distortion in the result.
 We can drop the irrelevant attributes to increase accuracy.
 
 
-
-
