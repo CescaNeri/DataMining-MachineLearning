@@ -643,6 +643,20 @@
   
   
     <li class="md-nav__item">
+      <a href="data-mining/weka-lab/bank-data.html" class="md-nav__link">
+        Bank Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="data-mining/weka-lab/weka-lab.html" class="md-nav__link">
         Weka
       </a>
@@ -911,8 +925,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
+    13. Bank Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    13. Weka
+    14. Weka
   </a>
   
 </li>
@@ -932,7 +953,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    14. Lab Notes
+    15. Lab Notes
   </a>
   
 </li>
@@ -1145,8 +1166,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
+    13. Bank Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    13. Weka
+    14. Weka
   </a>
   
 </li>
@@ -1166,7 +1194,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    14. Lab Notes
+    15. Lab Notes
   </a>
   
 </li>
@@ -2043,7 +2071,52 @@ The content of channels are related to the color space (the convention used to d
                         <h1 class='nav-section-title' id='section-dm-lab'>
                             DM - LAB <a class='headerlink' href='#section-dm-lab' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="data-mining-weka-lab-weka-lab"><h1 id="data-mining-weka-lab-weka-lab-weka">Weka</h1>
+                        <section class="print-page" id="data-mining-weka-lab-bank-data"><h1 id="data-mining-weka-lab-bank-data-bank-data">Bank Data</h1>
+<p>Attributes:</p>
+<p><img alt="" src="data-mining/weka-lab/bank.jpg" /></p>
+<p><strong>PEP class</strong> (Personal Equity Plan)</p>
+<h2 id="data-mining-weka-lab-bank-data-pre-processing-bank-data">Pre-Processing Bank Data</h2>
+<ol>
+<li>Load the files and save it in an ARFF format </li>
+<li>Carry out a visual analysis of the dataset</li>
+<li>Drop the ID attribute </li>
+</ol>
+<p>Which attribute is more relevant for our analysis?</p>
+<ul>
+<li>Sex (no relevant difference)</li>
+<li>Age (not as relevant as income, but there is a trend)</li>
+<li>Married (relevant)</li>
+<li>
+<p>Children (linear correlation, the first column does not respect the trend)</p>
+</li>
+<li>
+<p>Income (normal distribution)</p>
+<ul>
+<li>The higher the income, the higher the probability to buy PEP</li>
+</ul>
+<p><img alt="" src="data-mining/weka-lab/income.jpg" /></p>
+</li>
+</ul>
+<h2 id="data-mining-weka-lab-bank-data-visualize-the-plot-matrix">Visualize the Plot Matrix</h2>
+<p><img alt="" src="data-mining/weka-lab/children.jpg" /></p>
+<p>The higher the number of children, the lower the income as children cost a lot of money.</p>
+<p>People without children are not interested in PEP as they do not need to think about the future. </p>
+<h2 id="data-mining-weka-lab-bank-data-classify">Classify</h2>
+<p>Use the following algorithms and evaluate the result:</p>
+<ul>
+<li>J48</li>
+<li>J48 (without post-pruning)</li>
+<li>Jrip</li>
+<li>IBk (with k=1 and k=5)</li>
+</ul>
+<p><img alt="" src="data-mining/weka-lab/j48.jpg" /></p>
+<p>The main variables are <strong>children</strong> and <strong>income</strong> (closest to the root).</p>
+<p>KNN with k = 1 using the training set has an accuracy of 100% because the closest point to me is me (if given), so we drop it.</p>
+<p>With IBk we are using a <em>distance function</em> so numbers should be discretized. </p>
+<p>Also, irrelevant and replicated attributes can create distortion in the result. 
+- In this case, irrelevant attributes are most likely (sex, car)</p>
+<p><img alt="" src="data-mining/weka-lab/knn.jpg" /></p>
+<p>We can drop the irrelevant attributes to increase accuracy.</p></section><section class="print-page" id="data-mining-weka-lab-weka-lab"><h1 id="data-mining-weka-lab-weka-lab-weka">Weka</h1>
 <p>Weka is an open-source software for Data Mining and Machine Learning written in Java, distributed under the GNU public license.</p>
 <p>It includes four applications:</p>
 <ol>
