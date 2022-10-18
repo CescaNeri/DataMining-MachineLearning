@@ -1825,7 +1825,22 @@ In many applications, the relationship between attribute values and that of the 
 <li><strong>Uncertainty about the outcome prediction</strong></li>
 </ul>
 <p>Bayesian classifier model probabilistic relationships between attributes and the classification attribute.</p>
-<p><img alt="" src="data-mining/classifiers/stats.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Classifier Models</h1>
+<p><img alt="" src="data-mining/classifiers/stats.jpg" /></p>
+<h2 id="data-mining-classifiers-bayesian-classifier-naive-bayes">Naïve Bayes</h2>
+<p>The main advantage of probabilistic reasoning over logical reasoning lies in the possibility of arriving at rational descriptions even when there is not enough deterministic information about how the system works.</p>
+<p>This classifier is <strong>robust</strong> toward irrelevant attributes. </p>
+<p>It provide optimal results if:</p>
+<ul>
+<li>The conditional independence condition is met</li>
+<li>The probability distributions of P(X|Y) are known</li>
+</ul>
+<p><img alt="" src="data-mining/classifiers/naive.jpg" /></p>
+<p>13.5 is the solution that minimizes the error.</p>
+<h2 id="data-mining-classifiers-bayesian-classifier-probability-with-continuous-attributes">Probability with Continuous Attributes</h2>
+<p>In case attribute A is continuous, it is not possible to estimate probability for each of its values.</p>
+<p>We need to <strong>discretize</strong> the attribute into intervals by creating an ordinal attribute.
+If too many intervals are used, the limited number of training set event per interval makes the prediction unreliable. </p>
+<p>We <strong>associate</strong> the attributes with a density function and estimate the parameters of the function from the training set to estimate P(A|C).</p></section><h1 class='nav-section-title-end'>Ended: Classifier Models</h1>
                         <h1 class='nav-section-title' id='section-machine-learning'>
                             Machine Learning <a class='headerlink' href='#section-machine-learning' title='Permanent link'>↵</a>
                         </h1>
