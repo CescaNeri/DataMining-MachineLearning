@@ -643,6 +643,20 @@
   
   
     <li class="md-nav__item">
+      <a href="data-mining/weka-lab/weka-lab.html" class="md-nav__link">
+        Introduction to Weka
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="data-mining/weka-lab/bank-data.html" class="md-nav__link">
         Bank Data
       </a>
@@ -659,20 +673,6 @@
     <li class="md-nav__item">
       <a href="data-mining/weka-lab/census-data.html" class="md-nav__link">
         Census Data
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="data-mining/weka-lab/weka-lab.html" class="md-nav__link">
-        Weka
       </a>
     </li>
   
@@ -939,22 +939,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
+    13. Introduction to Weka
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
-    13. Bank Data
+    14. Bank Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
-    14. Census Data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    15. Weka
+    15. Census Data
   </a>
   
 </li>
@@ -1187,22 +1187,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
+    13. Introduction to Weka
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
-    13. Bank Data
+    14. Bank Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
-    14. Census Data
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    15. Weka
+    15. Census Data
   </a>
   
 </li>
@@ -2099,7 +2099,25 @@ The content of channels are related to the color space (the convention used to d
                         <h1 class='nav-section-title' id='section-dm-lab'>
                             DM - LAB <a class='headerlink' href='#section-dm-lab' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="data-mining-weka-lab-bank-data"><h1 id="data-mining-weka-lab-bank-data-bank-data">Bank Data</h1>
+                        <section class="print-page" id="data-mining-weka-lab-weka-lab"><h1 id="data-mining-weka-lab-weka-lab-weka">Weka</h1>
+<p>Weka is an open-source software for Data Mining and Machine Learning written in Java, distributed under the GNU public license.</p>
+<p>It includes four applications:</p>
+<ol>
+<li><strong>Explorer</strong> - we will use explorer</li>
+<li><strong>Experimenter</strong></li>
+<li><strong>Knowledge Flow</strong></li>
+<li><strong>SimpleCLI</strong></li>
+</ol>
+<p>The main file format used in Weka  is <strong>ARFF</strong> (attribute-relation file format), which is a comma-separated value format.</p>
+<p>Weka files store relations, attributes and values.</p>
+<div class="highlight"><pre><span></span><code><span class="nd">@attribute</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="n">numeric</span><span class="w"></span>
+<span class="nd">@attribute</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="p">{</span><span class="n">female</span><span class="p">,</span><span class="w"> </span><span class="n">male</span><span class="p">}</span><span class="w"></span>
+<span class="nd">@attribute</span><span class="w"> </span><span class="n">cholesterol</span><span class="w"> </span><span class="n">numeric</span><span class="w"></span>
+
+<span class="nd">@data</span><span class="w"></span>
+<span class="mi">63</span><span class="p">,</span><span class="w"> </span><span class="n">male</span><span class="p">,</span><span class="mi">233</span><span class="w"></span>
+<span class="mi">67</span><span class="p">,</span><span class="n">male</span><span class="p">,</span><span class="mi">286</span><span class="w"></span>
+</code></pre></div></section><section class="print-page" id="data-mining-weka-lab-bank-data"><h1 id="data-mining-weka-lab-bank-data-bank-data">Bank Data</h1>
 <p>Attributes:</p>
 <p><img alt="" src="data-mining/weka-lab/bank.jpg" /></p>
 <p><strong>PEP class</strong> (Personal Equity Plan)</p>
@@ -2154,25 +2172,7 @@ The content of channels are related to the color space (the convention used to d
 <li>Marital status (interesting, married is different)</li>
 <li>Occupation (interesting)</li>
 </ul>
-<p>Education and education-num are perfectly correlated (it is duplicated).</p></section><section class="print-page" id="data-mining-weka-lab-weka-lab"><h1 id="data-mining-weka-lab-weka-lab-weka">Weka</h1>
-<p>Weka is an open-source software for Data Mining and Machine Learning written in Java, distributed under the GNU public license.</p>
-<p>It includes four applications:</p>
-<ol>
-<li><strong>Explorer</strong> - we will use explorer</li>
-<li><strong>Experimenter</strong></li>
-<li><strong>Knowledge Flow</strong></li>
-<li><strong>SimpleCLI</strong></li>
-</ol>
-<p>The main file format used in Weka  is <strong>ARFF</strong> (attribute-relation file format), which is a comma-separated value format.</p>
-<p>Weka files store relations, attributes and values.</p>
-<div class="highlight"><pre><span></span><code><span class="nd">@attribute</span><span class="w"> </span><span class="n">age</span><span class="w"> </span><span class="n">numeric</span><span class="w"></span>
-<span class="nd">@attribute</span><span class="w"> </span><span class="n">sex</span><span class="w"> </span><span class="p">{</span><span class="n">female</span><span class="p">,</span><span class="w"> </span><span class="n">male</span><span class="p">}</span><span class="w"></span>
-<span class="nd">@attribute</span><span class="w"> </span><span class="n">cholesterol</span><span class="w"> </span><span class="n">numeric</span><span class="w"></span>
-
-<span class="nd">@data</span><span class="w"></span>
-<span class="mi">63</span><span class="p">,</span><span class="w"> </span><span class="n">male</span><span class="p">,</span><span class="mi">233</span><span class="w"></span>
-<span class="mi">67</span><span class="p">,</span><span class="n">male</span><span class="p">,</span><span class="mi">286</span><span class="w"></span>
-</code></pre></div></section><h1 class='nav-section-title-end'>Ended: DM - LAB</h1>
+<p>Education and education-num are perfectly correlated (it is duplicated).</p></section><h1 class='nav-section-title-end'>Ended: DM - LAB</h1>
                         <h1 class='nav-section-title' id='section-ml-lab'>
                             ML - LAB <a class='headerlink' href='#section-ml-lab' title='Permanent link'>↵</a>
                         </h1>
