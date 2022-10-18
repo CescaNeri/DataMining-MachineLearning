@@ -13,7 +13,7 @@
     
     
       
-        <title>Bank Data - CescaNeri/DataMining-MachineLearning</title>
+        <title>Census Data - CescaNeri/DataMining-MachineLearning</title>
       
     
     
@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bank-data" class="md-skip">
+        <a href="#census-data" class="md-skip">
           Skip to content
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Bank Data
+              Census Data
             
           </span>
         </div>
@@ -637,6 +637,20 @@
               
   
   
+  
+    <li class="md-nav__item">
+      <a href="bank-data.html" class="md-nav__link">
+        Bank Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
     
   
   
@@ -648,69 +662,10 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Bank Data
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="bank-data.html" class="md-nav__link md-nav__link--active">
-        Bank Data
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pre-processing-bank-data" class="md-nav__link">
-    Pre-Processing Bank Data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-the-plot-matrix" class="md-nav__link">
-    Visualize the Plot Matrix
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classify" class="md-nav__link">
-    Classify
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="census-data.html" class="md-nav__link">
+      <a href="census-data.html" class="md-nav__link md-nav__link--active">
         Census Data
       </a>
+      
     </li>
   
 
@@ -819,35 +774,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#pre-processing-bank-data" class="md-nav__link">
-    Pre-Processing Bank Data
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#visualize-the-plot-matrix" class="md-nav__link">
-    Visualize the Plot Matrix
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#classify" class="md-nav__link">
-    Classify
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -859,58 +785,23 @@
               
   
                 
-  <a href="https://github.com/CescaNeri/DataMining-MachineLearning/edit/main/data-mining/weka-lab/bank-data.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/CescaNeri/DataMining-MachineLearning/edit/main/data-mining/weka-lab/census-data.md" title="Edit this page" class="md-content__button md-icon">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
 
-<h1 id="bank-data">Bank Data</h1>
-<p>Attributes:</p>
-<p><img alt="" src="bank.jpg" /></p>
-<p><strong>PEP class</strong> (Personal Equity Plan)</p>
-<h2 id="pre-processing-bank-data">Pre-Processing Bank Data</h2>
-<ol>
-<li>Load the files and save it in an ARFF format </li>
-<li>Carry out a visual analysis of the dataset</li>
-<li>Drop the ID attribute </li>
-</ol>
-<p>Which attribute is more relevant for our analysis?</p>
+<h1 id="census-data">Census Data</h1>
+<p>Identify relevant attributes:</p>
 <ul>
-<li>Sex (no relevant difference)</li>
-<li>Age (not as relevant as income, but there is a trend)</li>
-<li>Married (relevant)</li>
-<li>
-<p>Children (linear correlation, the first column does not respect the trend)</p>
-</li>
-<li>
-<p>Income (normal distribution)</p>
-<ul>
-<li>The higher the income, the higher the probability to buy PEP</li>
+<li>Capital gain/loss are not relevant because many attributes are zero</li>
+<li>Age (we expect it to be linear but the majority of &gt;50k is in the range of 40 years)</li>
+<li>Work class is unbalanced (the majority of people works in private), coverage eis very low</li>
+<li>Education number </li>
+<li>Marital status (interesting, married is different)</li>
+<li>Occupation (interesting)</li>
 </ul>
-<p><img alt="" src="income.jpg" /></p>
-</li>
-</ul>
-<h2 id="visualize-the-plot-matrix">Visualize the Plot Matrix</h2>
-<p><img alt="" src="children.jpg" /></p>
-<p>The higher the number of children, the lower the income as children cost a lot of money.</p>
-<p>People without children are not interested in PEP as they do not need to think about the future. </p>
-<h2 id="classify">Classify</h2>
-<p>Use the following algorithms and evaluate the result:</p>
-<ul>
-<li>J48</li>
-<li>J48 (without post-pruning)</li>
-<li>Jrip</li>
-<li>IBk (with k=1 and k=5)</li>
-</ul>
-<p><img alt="" src="j48.jpg" /></p>
-<p>The main variables are <strong>children</strong> and <strong>income</strong> (closest to the root).</p>
-<p>KNN with k = 1 using the training set has an accuracy of 100% because the closest point to me is me (if given), so we drop it.</p>
-<p>With IBk we are using a <em>distance function</em> so numbers should be discretized. </p>
-<p>Also, irrelevant and replicated attributes can create distortion in the result. 
-- In this case, irrelevant attributes are most likely (sex, car)</p>
-<p><img alt="" src="knn.jpg" /></p>
-<p>We can drop the irrelevant attributes to increase accuracy.</p>
+<p>Education and education-num are perfectly correlated (it is duplicated).</p>
 
   <hr>
 <div class="md-source-file">
@@ -921,7 +812,7 @@
       
         <br>
         Created:
-        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 09:37:00</span>
+        <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 18, 2022 10:04:20</span>
       
     
   </small>
@@ -953,7 +844,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../../machine-learning/data-acquisition/data-preparation.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Data Preparation" rel="prev">
+        <a href="bank-data.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Bank Data" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -962,20 +853,20 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              Data Preparation
+              Bank Data
             </div>
           </div>
         </a>
       
       
         
-        <a href="census-data.html" class="md-footer__link md-footer__link--next" aria-label="Next: Census Data" rel="next">
+        <a href="weka-lab.html" class="md-footer__link md-footer__link--next" aria-label="Next: Weka" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              Census Data
+              Weka
             </div>
           </div>
           <div class="md-footer__button md-icon">

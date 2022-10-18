@@ -657,6 +657,20 @@
   
   
     <li class="md-nav__item">
+      <a href="data-mining/weka-lab/census-data.html" class="md-nav__link">
+        Census Data
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
       <a href="data-mining/weka-lab/weka-lab.html" class="md-nav__link">
         Weka
       </a>
@@ -932,8 +946,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
+    14. Census Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    14. Weka
+    15. Weka
   </a>
   
 </li>
@@ -953,7 +974,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    15. Lab Notes
+    16. Lab Notes
   </a>
   
 </li>
@@ -1173,8 +1194,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
+    14. Census Data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    14. Weka
+    15. Weka
   </a>
   
 </li>
@@ -1194,7 +1222,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    15. Lab Notes
+    16. Lab Notes
   </a>
   
 </li>
@@ -2116,7 +2144,17 @@ The content of channels are related to the color space (the convention used to d
 <p>Also, irrelevant and replicated attributes can create distortion in the result. 
 - In this case, irrelevant attributes are most likely (sex, car)</p>
 <p><img alt="" src="data-mining/weka-lab/knn.jpg" /></p>
-<p>We can drop the irrelevant attributes to increase accuracy.</p></section><section class="print-page" id="data-mining-weka-lab-weka-lab"><h1 id="data-mining-weka-lab-weka-lab-weka">Weka</h1>
+<p>We can drop the irrelevant attributes to increase accuracy.</p></section><section class="print-page" id="data-mining-weka-lab-census-data"><h1 id="data-mining-weka-lab-census-data-census-data">Census Data</h1>
+<p>Identify relevant attributes:</p>
+<ul>
+<li>Capital gain/loss are not relevant because many attributes are zero</li>
+<li>Age (we expect it to be linear but the majority of &gt;50k is in the range of 40 years)</li>
+<li>Work class is unbalanced (the majority of people works in private), coverage eis very low</li>
+<li>Education number </li>
+<li>Marital status (interesting, married is different)</li>
+<li>Occupation (interesting)</li>
+</ul>
+<p>Education and education-num are perfectly correlated (it is duplicated).</p></section><section class="print-page" id="data-mining-weka-lab-weka-lab"><h1 id="data-mining-weka-lab-weka-lab-weka">Weka</h1>
 <p>Weka is an open-source software for Data Mining and Machine Learning written in Java, distributed under the GNU public license.</p>
 <p>It includes four applications:</p>
 <ol>
