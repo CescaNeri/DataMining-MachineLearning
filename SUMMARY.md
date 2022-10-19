@@ -4,5 +4,6 @@
 * [Classifier Models](data-mining/classifiers/)
 * [Machine Learning](machine-learning/introduction/)
 * [Data Acquisition and Processing](machine-learning/data-acquisition/)
+* [Model](machine-learning/model/)
 * [DM - LAB](data-mining/weka-lab/)
 * [ML - LAB](machine-learning/LAB/)
