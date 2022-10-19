@@ -13,7 +13,8 @@ There are different tasks in ML depending on the output we want:
 - Regression
 - Clustering
 
-## CLassification
+## Classification
+
     - We have a specific input, a model (classifier) which outputs a class (pattern)
     - If there are only 2 classes, we call the problem *binary* classification, while with multiple classes, we have *multi-class* classification
 
