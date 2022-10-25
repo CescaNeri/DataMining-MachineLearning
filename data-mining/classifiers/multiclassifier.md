@@ -20,7 +20,7 @@ Classifiers make mistakes in predictions, due to:
 Different types of classifiers have inherently different capabilities in modeling the edges of regions. 
 The difference between the true separation line and the average separation line represents the classifier bias.
 
-## Bagging
+## Bagging (variance)
 
 Bagging allows the construction of compound classifiers that associate an event with the highest rated class from the base classifiers.
 
@@ -51,6 +51,8 @@ An iterative approach to progressively adjust the composition of the training se
 The final result is obtained by combining the result the predictions made by the different classifiers.
 
 One of the most widely used boosting techniques is **AdaBoost:**
+
+AdaBoost complex on the most complex part of the dataset.
 
 ![](ada.jpg)
 ![](boost.jpg)

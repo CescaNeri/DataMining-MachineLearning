@@ -2058,7 +2058,7 @@ If too many intervals are used, the limited number of training set event per int
 </ul>
 <p>Different types of classifiers have inherently different capabilities in modeling the edges of regions. 
 The difference between the true separation line and the average separation line represents the classifier bias.</p>
-<h2 id="data-mining-classifiers-multiclassifier-bagging">Bagging</h2>
+<h2 id="data-mining-classifiers-multiclassifier-bagging-variance">Bagging (variance)</h2>
 <p>Bagging allows the construction of compound classifiers that associate an event with the highest rated class from the base classifiers.</p>
 <p>Each classifier is constructed by <strong>bootstrapping</strong> the same training set.</p>
 <p><em>bootstrapping: any test or metric that uses random sampling with replacement</em></p>
@@ -2077,6 +2077,7 @@ For each node in the decision tree, the split attribute is chosen on a random su
 </ul>
 <p>The final result is obtained by combining the result the predictions made by the different classifiers.</p>
 <p>One of the most widely used boosting techniques is <strong>AdaBoost:</strong></p>
+<p>AdaBoost complex on the most complex part of the dataset.</p>
 <p><img alt="" src="data-mining/classifiers/ada.jpg" />
 <img alt="" src="data-mining/classifiers/boost.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Classifier Models</h1>
                         <h1 class='nav-section-title' id='section-machine-learning'>
@@ -2456,12 +2457,15 @@ The ability of a calculator to perform calculations on large amounts of data is 
 <ul>
 <li>Capital gain/loss are not relevant because many attributes are zero</li>
 <li>Age (we expect it to be linear but the majority of &gt;50k is in the range of 40 years)</li>
-<li>Work class is unbalanced (the majority of people works in private), coverage eis very low</li>
+<li>Work class is unbalanced (the majority of people works in private), coverage is very low</li>
 <li>Education number </li>
 <li>Marital status (interesting, married is different)</li>
 <li>Occupation (interesting)</li>
 </ul>
-<p>Education and education-num are perfectly correlated (it is duplicated).</p></section><h1 class='nav-section-title-end'>Ended: DM - LAB</h1>
+<p>Education and education-num are perfectly correlated (it is duplicated).</p>
+<p><img alt="" src="data-mining/weka-lab/census.jpg" /></p>
+<p>We can enhance accuracy by replacing missing values:</p>
+<p>Preprocess - filter - unsupervised - attribute - replacemissingvalues</p></section><h1 class='nav-section-title-end'>Ended: DM - LAB</h1>
                         <h1 class='nav-section-title' id='section-ml-lab'>
                             ML - LAB <a class='headerlink' href='#section-ml-lab' title='Permanent link'>↵</a>
                         </h1>

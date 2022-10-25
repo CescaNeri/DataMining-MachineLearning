@@ -508,8 +508,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bagging" class="md-nav__link">
-    Bagging
+  <a href="#bagging-variance" class="md-nav__link">
+    Bagging (variance)
   </a>
   
 </li>
@@ -916,8 +916,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#bagging" class="md-nav__link">
-    Bagging
+  <a href="#bagging-variance" class="md-nav__link">
+    Bagging (variance)
   </a>
   
 </li>
@@ -973,7 +973,7 @@
 </ul>
 <p>Different types of classifiers have inherently different capabilities in modeling the edges of regions. 
 The difference between the true separation line and the average separation line represents the classifier bias.</p>
-<h2 id="bagging">Bagging</h2>
+<h2 id="bagging-variance">Bagging (variance)</h2>
 <p>Bagging allows the construction of compound classifiers that associate an event with the highest rated class from the base classifiers.</p>
 <p>Each classifier is constructed by <strong>bootstrapping</strong> the same training set.</p>
 <p><em>bootstrapping: any test or metric that uses random sampling with replacement</em></p>
@@ -992,6 +992,7 @@ For each node in the decision tree, the split attribute is chosen on a random su
 </ul>
 <p>The final result is obtained by combining the result the predictions made by the different classifiers.</p>
 <p>One of the most widely used boosting techniques is <strong>AdaBoost:</strong></p>
+<p>AdaBoost complex on the most complex part of the dataset.</p>
 <p><img alt="" src="ada.jpg" />
 <img alt="" src="boost.jpg" /></p>
 
@@ -1000,7 +1001,7 @@ For each node in the decision tree, the split attribute is chosen on a random su
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 08:03:59</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 25, 2022 10:02:45</span>
       
         <br>
         Created:
