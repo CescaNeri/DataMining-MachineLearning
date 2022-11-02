@@ -73,6 +73,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#metrics" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -830,6 +835,30 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#system-performance-with-classification" class="md-nav__link">
+    System Performance with Classification
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confusion-matrix" class="md-nav__link">
+    Confusion Matrix
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -848,16 +877,32 @@
 
 
 
-  <h1>Metrics</h1>
-
-
+<h1 id="metrics">Metrics</h1>
+<p>The <strong>prediction</strong> of the system is an extremely important step.
+It allows you to calculate the performance of the system through metrics, to understand if the system responds correctly with respect to what was designed and desired.</p>
+<p>The computation of metrics is also linked to the achievement of certain contractual obligations.</p>
+<h2 id="system-performance-with-classification">System Performance with Classification</h2>
+<p>Generally, it is preferred to use a measure linked directly to the semantics of the problem.
+The <strong>metric</strong> examines the prediction of the model and the label provided in input (GroundTruth and prediction).</p>
+<div class="highlight"><pre><span></span><code>Accuracy = # pattern correctly classified / total patterns
+</code></pre></div>
+<h2 id="confusion-matrix">Confusion Matrix</h2>
+<p>The confusion matrix is very useful in multi-class classification problems to understand how errors are distributed.</p>
+<ul>
+<li>Rows: classes of GT</li>
+<li>Columns: predicted classes</li>
+</ul>
+<p>A <em>cell (r,c)</em> shows the percentage in which the system predicts class c for a ground truth class r.</p>
+<p>Ideally, the matrix should be diagonal and high values (off diagonal) indicate concentrations of errors.</p>
+<p><img alt="" src="confusion.jpg" /></p>
+<p>In the example, the class "0" is often confused with "6".</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 12:38:46</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 15:09:16</span>
       
         <br>
         Created:
@@ -875,7 +920,7 @@
   
     <div class="md-source-date">
       <small>
-          Authors: <span class='git-page-authors git-authors'></span>
+          Authors: <span class='git-page-authors git-authors'><a href='mailto:104086181+cescaneri@users.noreply.github.com'>Francesca Neri</a></span>
       </small>
     </div>
   
