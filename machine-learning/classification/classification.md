@@ -136,5 +136,43 @@ Differently from bagging, there is an incremental learning phase, at each step a
 
 ![](adaboost.jpg)
 
+# Feature Description
+
+The learning phase is complex with high-dimensionality data as images.
+For instance, what if in input we have RGB images?
+
+**Feature extraction** refers to the process ot extracting features from data.
+A feature is a n-dimensional vector of numerical features that represent (in a discriminative way) some object used as input data.
+
+**Example of features:**
+
+Object: geometric shape
+
+- Data: array of values
+- Features: subset of coordinates or a new value that we can compute from coordinates
+
+Object: image
+
+- Data: matrix of values
+- Features: subset of pixels or a new value that we can compute from pixels
+
+## Histogram of Oriented Gradients (HOG)
+
+A visual feature descriptor that can describe the **shape** of an object.
+HOG provides the edge direction:
+
+- The whole image is divided into smaller regions
+- For each region, the edge directions are calculated
+    - **Edge**: curves at which the brightness changes sharply
+    - **Direction**: angle and magnitude of edges
+
+![](hog.jpg)
+
+## Local Binary Pattern (LBP)
+
+A visual feature descriptor that can describe the texture of the surface (visual surface appearance).
+
+![](lbp.jpg)
+
 
 

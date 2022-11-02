@@ -997,13 +997,44 @@ Unfortunately, it is very difficult to have real independence between classifier
 <p>Several weak classifiers are combined together to obtain a strong classifier.
 Differently from bagging, there is an incremental learning phase, at each step a weak classifier is added.</p>
 <p><img alt="" src="adaboost.jpg" /></p>
+<h1 id="feature-description">Feature Description</h1>
+<p>The learning phase is complex with high-dimensionality data as images.
+For instance, what if in input we have RGB images?</p>
+<p><strong>Feature extraction</strong> refers to the process ot extracting features from data.
+A feature is a n-dimensional vector of numerical features that represent (in a discriminative way) some object used as input data.</p>
+<p><strong>Example of features:</strong></p>
+<p>Object: geometric shape</p>
+<ul>
+<li>Data: array of values</li>
+<li>Features: subset of coordinates or a new value that we can compute from coordinates</li>
+</ul>
+<p>Object: image</p>
+<ul>
+<li>Data: matrix of values</li>
+<li>Features: subset of pixels or a new value that we can compute from pixels</li>
+</ul>
+<h2 id="histogram-of-oriented-gradients-hog">Histogram of Oriented Gradients (HOG)</h2>
+<p>A visual feature descriptor that can describe the <strong>shape</strong> of an object.
+HOG provides the edge direction:</p>
+<ul>
+<li>The whole image is divided into smaller regions</li>
+<li>For each region, the edge directions are calculated<ul>
+<li><strong>Edge</strong>: curves at which the brightness changes sharply</li>
+<li><strong>Direction</strong>: angle and magnitude of edges</li>
+</ul>
+</li>
+</ul>
+<p><img alt="" src="hog.jpg" /></p>
+<h2 id="local-binary-pattern-lbp">Local Binary Pattern (LBP)</h2>
+<p>A visual feature descriptor that can describe the texture of the surface (visual surface appearance).</p>
+<p><img alt="" src="lbp.jpg" /></p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 26, 2022 13:28:05</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 2, 2022 13:41:09</span>
       
         <br>
         Created:
