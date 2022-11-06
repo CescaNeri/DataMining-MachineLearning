@@ -1,10 +1,10 @@
-Elapsed Time: 5.862117290496826
-Final accuracy: SVC 32, 0.478
+Elapsed Time: 6.028032064437866
+Final accuracy: SVC 32, 0.482
 
 
-Elapsed Time: 23.638479232788086
-Final accuracy: SVC 64, 0.486
+Elapsed Time: 24.317260026931763
+Final accuracy: SVC 64, 0.492
 
 
-Elapsed Time: 129.62877583503723
-Final accuracy: SVC 128, 0.440
+Elapsed Time: 131.22519373893738
+Final accuracy: SVC 128, 0.448
