@@ -2287,7 +2287,111 @@ For each node in the decision tree, the split attribute is chosen on a random su
                         <h1 class='nav-section-title' id='section-association-rule'>
                             Association Rule <a class='headerlink' href='#section-association-rule' title='Permanent link'>↵</a>
                         </h1>
-                        <section class="print-page" id="data-mining-association-rule-association-rule"><h1 id="data-mining-association-rule-association-rule-association-rule">Association Rule</h1></section><h1 class='nav-section-title-end'>Ended: Association Rule</h1>
+                        <section class="print-page" id="data-mining-association-rule-association-rule"><h1 id="data-mining-association-rule-association-rule-association-rule">Association Rule</h1>
+<p>The idea of association rule is <strong>basket analysis</strong>.
+We have a set of transactions (set of elements coming from a huge set).</p>
+<p>A classic example of association rule coming from <em>data mining literature</em> is the association {Diaper} -&gt; {Beer}</p>
+<h2 id="data-mining-association-rule-association-rule-applications">Applications</h2>
+<ul>
+<li>Marketing sales promotion (understand which products could be affected in the event that the store interrupted the sale of a specific product)</li>
+<li>Arrangement of goods (to identify the products bought together by a sufficiently large number of costumers)</li>
+</ul>
+<p><img alt="" src="data-mining/association-rule/itemset.jpg" /></p>
+<p><img alt="" src="data-mining/association-rule/ass-rule.jpg" /></p>
+<p><strong>Problem Formulation</strong></p>
+<p>Given a set of transactions T, you want to find all transactions such that:</p>
+<ul>
+<li>Support &gt;= <em>minsup</em></li>
+<li>Confidence &gt;= <em>minconf</em></li>
+</ul>
+<p><strong>Naive Approach:</strong></p>
+<ul>
+<li>Lists all possible association rules</li>
+<li>For each rule calculates support and confidence</li>
+<li>Eliminate rules that do not meet thresholds for <em>minsup</em> and <em>minconf</em></li>
+</ul>
+<p><img alt="" src="data-mining/association-rule/problem.jpg" /></p>
+<p>All rules are binary partitions of the same itemset: {Milk, Diaper, Beer} and rules based on the same itemset have the same support but they may have different confidence.</p>
+<p>Searching association rules follow a two-steps approach:</p>
+<ol>
+<li>Generate <strong>frequent itemsets</strong></li>
+<li>Rule generation (for each itemset, generate the rules with high confidence. Each rule is a binary partitioning of the elements in the itemset)</li>
+</ol>
+<h2 id="data-mining-association-rule-association-rule-frequent-itemsets-generation">Frequent Itemsets Generation</h2>
+<p>Frequent itemsets can be identified following the <strong>apriori principle:</strong></p>
+<p>If an itemset is frequent, then all its sub-sets must be frequent too.</p>
+<ul>
+<li>The support of an itemset does not exceed the support of its subsets</li>
+<li>This is known as the anti-monotonic property of the support</li>
+</ul>
+<p>A frequent itemset is <strong>maximal</strong> if no one of its adjacent superset is frequent.
+On the other hand, an itemset is <strong>closed</strong> if none if its adjacent superset has the same support.</p>
+<p><strong>Closed vs Maximal itemsets</strong></p>
+<p>From an efficiency point of view:</p>
+<ul>
+<li>They provide a more compact representation than frequent ones, which is relevant when space is an issue.</li>
+<li>Only closed itemsets determine a lossless compression of frequent patterns, which contain complete information regarding the frequent itemsets but closed itemsets are fewer in number than frequent itemsets.</li>
+<li>From the semantic point of view, maximal itemsets are the most complex while closed ones can be interesting if they are supported by groups with largely different support</li>
+</ul>
+<h2 id="data-mining-association-rule-association-rule-rule-generation">Rule Generation</h2>
+<p>Given a frequent itemset L, find all the non-empty subsets f ⊂ L such that f -&gt; L - f that fulfills the minimum confidence constraint.</p>
+<p>The confidence measure does not have the property of anti-monotonicity with respect to the overall associative rule.
+However, it is possible to take advantage of the anti-monotonicity of the confidence with respect to the left-hand side of the rule.</p>
+<h2 id="data-mining-association-rule-association-rule-interestingness">Interestingness</h2>
+<p>The <strong>objective measure</strong> is to prioritize rules based on statistical criteria calculated from data.
+The <strong>subjective measure</strong> is to prioritize rules based on user-defined criteria.</p>
+<p>According to the latter, a patter is interesting if:</p>
+<ul>
+<li>It contradicts the users' expectations</li>
+<li>The user is interested in performing some activities or making decisions regarding its elements</li>
+</ul>
+<h2 id="data-mining-association-rule-association-rule-dataset-support">Dataset Support</h2>
+<p><strong>Inhomogeneous Support</strong></p>
+<p>Many datasets have itemsets with very high support along with others with very limited support.
+A large commerical chain sells products with price ranges from €1 to €10,000. The number of transactions that include products with low price is much higher than those with high price. However, the associations among them are of interest of the company.</p>
+<p>Setting the <em>minsup</em> threshold fot these datasets can be very difficult.</p>
+<p><strong>Cross-support Pattern</strong></p>
+<p>A cross-support pattern is an itemset x = {i...1n} where the support ratio r(x) is lower than a threshold <em>thr</em>.</p>
+<p><img alt="" src="data-mining/association-rule/cross-support.jpg" /></p>
+<h2 id="data-mining-association-rule-association-rule-confidence-limits">Confidence Limits</h2>
+<p>The case of cross-support patterns has shown the limits of support.</p>
+<p>The confidence limitations is due to the fact that it does not consider the itemset support in the right.hand side of the rule and therefore, it does not provide a correct assessment in the case where the item groups are not stochastically independent.</p>
+<p>The <strong>lift</strong> value of an association rule is the ratio of the confidence of the rule and the <strong>expected confidence</strong> of the rule.</p>
+<h2 id="data-mining-association-rule-association-rule-handling-categorical-and-continuous-attributes">Handling Categorical and Continuous Attributes</h2>
+<p>In its basic formulation, association rule works with binary and asymmetric variables.</p>
+<p><strong>Binarization</strong> is needed to transform categorical attributes into asymmetric binary attributes by introducing a new item for every possible attribute value.</p>
+<p>Association rules that include attributes with continuous values are called <strong>quantitative association rules.</strong>
+Continuous attributes can be handled through several approaches:</p>
+<ul>
+<li>Based on discretization</li>
+<li>Based on statistics</li>
+<li>Without discretization </li>
+</ul>
+<p>The discretization poses the problem of how to fix the number and the border ranges.
+The number of intervals is usually supplied by the users and can be expresses in terms of:</p>
+<ul>
+<li>Range of intervals (equi-distant discretization)</li>
+<li>Average number of transactions per interval (equi-depth discretization)</li>
+<li>Cluster number</li>
+</ul>
+<p>The choice of the width of the intervals affects the value of support and confidence:</p>
+<ul>
+<li>Too large intervals reduce confidence</li>
+<li>Too narrow intervals reduce support and tend to determine replicated rules</li>
+</ul>
+<p><img alt="" src="data-mining/association-rule/continuous.jpg" /></p>
+<p>One possible solution is to try all possible intervals (brute force).</p>
+<h2 id="data-mining-association-rule-association-rule-multi-level-association-rules">Multi-level Association Rules</h2>
+<p>A hierarchy of concepts composed by generalization based on the semantics of its elements.</p>
+<p>The higher the level, the higher the support, leading to <strong>generic rules</strong>.</p>
+<p>Hierarchies of concepts are incorporated for the following reasons:</p>
+<ul>
+<li>Rules at the lower levels may not have sufficient support to appear in frequent itemsets</li>
+<li>Rules at lower levels may be too specific</li>
+</ul>
+<p>Multi-level associative rules can be handled with the algorithms already studied by extending each transaction with the parent items of items in the transaction.</p>
+<p>Adding details (skimmed milk, white bread) does not add any value and increases complexity.</p>
+<p><img alt="" src="data-mining/association-rule/mutli-level.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Association Rule</h1>
                         <h1 class='nav-section-title' id='section-machine-learning'>
                             Machine Learning <a class='headerlink' href='#section-machine-learning' title='Permanent link'>↵</a>
                         </h1>
