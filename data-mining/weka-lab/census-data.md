@@ -17,3 +17,9 @@ We can enhance accuracy by replacing missing values:
 
 Preprocess - filter - unsupervised - attribute - replacemissingvalues
 
+## Apriori Algorithm
+
+We apply discretization and perform a manual analysis of the data in order to identify any correlation between pairs of attributes.
+
+![](apriori.jpg)
+
