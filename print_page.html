@@ -789,6 +789,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="machine-learning/classification/deep-learning.html" class="md-nav__link">
+        Deep Learning
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1192,6 +1206,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#machine-learning-classification-deep-learning" class="md-nav__link">
+    19. Deep Learning
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1207,21 +1228,21 @@
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    19. Introduction to Weka
+    20. Introduction to Weka
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
-    20. Bank Data
+    21. Bank Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
-    21. Census Data
+    22. Census Data
   </a>
   
 </li>
@@ -1241,7 +1262,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    22. Lab Notes
+    23. Lab Notes
   </a>
   
 </li>
@@ -1521,6 +1542,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#machine-learning-classification-deep-learning" class="md-nav__link">
+    19. Deep Learning
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1536,21 +1564,21 @@
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    19. Introduction to Weka
+    20. Introduction to Weka
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
-    20. Bank Data
+    21. Bank Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
-    21. Census Data
+    22. Census Data
   </a>
   
 </li>
@@ -1570,7 +1598,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    22. Lab Notes
+    23. Lab Notes
   </a>
   
 </li>
@@ -2862,7 +2890,80 @@ The <strong>metric</strong> examines the prediction of the model and the label p
 <p>A <em>cell (r,c)</em> shows the percentage in which the system predicts class c for a ground truth class r.</p>
 <p>Ideally, the matrix should be diagonal and high values (off diagonal) indicate concentrations of errors.</p>
 <p><img alt="" src="machine-learning/classification/confusion.jpg" /></p>
-<p>In the example, the class "0" is often confused with "6".</p></section><h1 class='nav-section-title-end'>Ended: Classification</h1>
+<p>In the example, the class "0" is often confused with "6".</p></section><section class="print-page" id="machine-learning-classification-deep-learning"><h1 id="machine-learning-classification-deep-learning-classification-with-deep-learning">Classification with Deep Learning</h1>
+<p>Deep learning is a discipline, similar to ML, that allows you to avoid the problematic phase of feature extraction with high-dimensional input.</p>
+<p>Is is based on <strong>neural networks</strong> (NNs) classifier.
+The key idea is to imitate, as far as possible, he nature (neurons in the human brain).</p>
+<p><img alt="" src="machine-learning/classification/neural.jpg" /></p>
+<p>The first Artificial Neuron has been introduced in 1943 by McCulloch and Pitts.
+In artificial neuron, there are:</p>
+<ul>
+<li>Inputs (digital numbers)</li>
+<li>Inputs are weighted (not all inputs are equally important)</li>
+<li>Inputs are merged with a sum function (plus a <em>bias</em>)</li>
+<li>An <strong>activation function</strong> is used to generate the final output</li>
+</ul>
+<h2 id="machine-learning-classification-deep-learning-activation-function">Activation Function</h2>
+<p>The activation function defines the output of that node given an input or set of inputs.
+They are a sort of switch of the artificial neuron; they output a small value for small inputs and a larger value if its inputs exceed a threshold.</p>
+<p><strong>Liner vs Non-linear problems</strong></p>
+<p>A single artificial neuron can solve only <strong>linear</strong> problems.</p>
+<p>The solution is to use more ANs organized on different layers (<strong>Multi Layer Perceptron</strong>).
+It is not easy as it introduces several mathematical problems, besides, we greatly improve the computational load.</p>
+<h2 id="machine-learning-classification-deep-learning-artificial-neural-networks">Artificial Neural Networks</h2>
+<p>Groups of artificial neurons are organized in different <strong>layers</strong>: neural networks.</p>
+<p>Typically, they present:</p>
+<ul>
+<li>An input layer (input of the network)</li>
+<li>An output layer (output of the network)</li>
+<li>One or more <strong>hidden layers</strong></li>
+</ul>
+<p>Each neuron is <strong>fully connected</strong> with those of the next level.
+Again, we try to imitate the hierarchical nature of our neurons:</p>
+<ul>
+<li>We have only ten levels between the retina and the actuator muscles.</li>
+<li>Otherwise, we would be too slow to react to stimuli.</li>
+</ul>
+<p><strong>ANN Typologies</strong></p>
+<ul>
+<li><strong>Feedforward</strong> (FF): the connections connect the neurons if one level with the neurons of the next level.<ul>
+<li>Connections to the same level and backward connections are not allowed.</li>
+<li>It is by far the most used type of network.</li>
+</ul>
+</li>
+<li><strong>Recurrent</strong>: feedback connections are expected (towards neurons of the same level but also backward).<ul>
+<li>More suitable for the management of sequences because they have a short-term memory effect</li>
+</ul>
+</li>
+</ul>
+<p><strong>Neural Networks Training</strong></p>
+<p>General considerations about NN layers:</p>
+<ul>
+<li>Greater number of hidden layers (and neurons) -&gt; better performance</li>
+<li>Greater number of hidden layers (and neurons) -&gt; need for more training data</li>
+<li>Greater number of hidden layers (and neurons) -&gt; greater computational load</li>
+</ul>
+<p><em>How is it possible to train a neural network?</em></p>
+<p>Training a neural network is extremely complicated, but we can use specific frameworks:</p>
+<ul>
+<li>PyTorch</li>
+<li>TensorFlow</li>
+<li>Mxnet</li>
+</ul>
+<p><img alt="" src="machine-learning/classification/train.jpg" /></p>
+<p>Inside the neural network, we can change the weights applied to each input.</p>
+<p>Training a NN means <strong>minimizing</strong> the loss function.
+The cost function:</p>
+<ul>
+<li>It is a mathematical formulation of the learning goal</li>
+<li>It measures the error between the prediction and the ground truth</li>
+<li>Presents the performance in the form of a single real number</li>
+</ul>
+<p><img alt="" src="machine-learning/classification/loss.jpg" /></p>
+<p><em>How to minimize the loss?</em> -&gt; adjusting the weights and the bias of every neuron</p>
+<p>We can change weights and bias following <strong>gradients</strong> (the derivative of a function measures the sensitivity to change of the function value with respect to a change in its argument).</p>
+<p>We can minimize the loss function with a gradient descent approach that adjust weights in the following manner:</p>
+<p><img alt="" src="machine-learning/classification/weight.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Classification</h1>
                         <h1 class='nav-section-title' id='section-dm-lab'>
                             DM - LAB <a class='headerlink' href='#section-dm-lab' title='Permanent link'>↵</a>
                         </h1>
