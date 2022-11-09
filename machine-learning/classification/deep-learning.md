@@ -88,3 +88,5 @@ We can minimize the loss function with a gradient descent approach that adjust w
 
 ![](weight.jpg)
 
+![](dnn-train.jpg)
+
