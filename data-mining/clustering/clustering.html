@@ -572,9 +572,54 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Clustering
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="clustering.html" class="md-nav__link md-nav__link--active">
         Clustering
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-clustering" class="md-nav__link">
+    Types of clustering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-clustering" class="md-nav__link">
+    K-means Clustering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converge-and-optimality" class="md-nav__link">
+    Converge and Optimality
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1022,6 +1067,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-clustering" class="md-nav__link">
+    Types of clustering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#k-means-clustering" class="md-nav__link">
+    K-means Clustering
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#converge-and-optimality" class="md-nav__link">
+    Converge and Optimality
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1041,14 +1115,75 @@
 
 <h1 id="clustering">Clustering</h1>
 <p>Clustering analysis aims at finding groups of objects such that objects that belong to the same group are more similar to each other than objects belonging to different groups.</p>
-<p>Slides until 36</p>
+<p>CLustering is NOT supervised classification (it assumes classes to be known) or segmentation (partition rule is given) or querying a database (the selection and grouping criteria are given).</p>
+<h2 id="types-of-clustering">Types of clustering</h2>
+<p>We can distinguish between:</p>
+<ul>
+<li><strong>Partitioning clustering</strong>: a division of objects into non-overlapping subsets (clusters), in which each object belongs exactly to a cluster.</li>
+<li><strong>Hierarchical clustering</strong>: a set of nested clusters organized as a hierarchical tree.</li>
+<li><strong>Exclusive vs non-exclusive</strong>: in non-exclusive clustering, points can belong to multiple clusters.</li>
+<li><strong>Fuzzy vs non-fuzzy</strong>: in a fuzzy clustering a point belongs to all clusters with a weight between 0 and 1.</li>
+<li><strong>Partial vs complete</strong>: in a partial clustering, some points may not belong to any of the clusters.</li>
+<li><strong>Heterogeneous vs homogeneous</strong>: in a heterogenous cluster, clusters can have very different sizes, shapes and densities.</li>
+</ul>
+<p>Similarly, we can identify different types of <strong>clusters</strong>:</p>
+<ul>
+<li><strong>Well-separated clusters</strong>: each point in the cluster is closer (more similar) to any other point in the cluster than any other point that does not belong to the cluster.</li>
+<li><strong>Center-based clusters</strong>: a point in the cluster is closer to the <em>center</em> of the cluster, rather than to the center of each other cluster.<ul>
+<li>Cluster center = <strong>centroid</strong></li>
+</ul>
+</li>
+<li><strong>Contiguous clusters</strong> (nearest neighbor): a point in a cluster is closer to one or more other points in the cluster than to any point not in the cluster.</li>
+<li><strong>Density-based clusters</strong>: a cluster is a dense region of points, which is separated by low-density regions from other regions of high density.</li>
+<li><strong>Conceptual clusters</strong>: clusters with shared properties or in which the shared property derives from the whole set of points.</li>
+</ul>
+<h2 id="k-means-clustering">K-means Clustering</h2>
+<p><img alt="" src="k-means.jpg" /></p>
+<p>Initial centroids are often chosen randomly (clusters produced vary from one run to another).</p>
+<p><img alt="" src="sse.jpg" /></p>
+<h2 id="converge-and-optimality">Converge and Optimality</h2>
+<p>There is only a finite number of ways to partition n records into k groups.
+So, there is only a finite number of possible configurations in which all the centers are centroids of the points they possess.</p>
+<p>If there are K real clusters, the probability  of choosing a centroid from each cluster is very limited.</p>
+<p>Some solutions to this problem, include:</p>
+<ul>
+<li>Run the algorithm several times with different centroids.</li>
+<li>Perform a sampling of the points and use a hierarchical clustering to identify k initial centroids.</li>
+<li>Select more than k initial centroids and then select the ones to use from these.</li>
+<li>Use post-processing techniques to eliminate the identified erroneous cluster.</li>
+<li>Bisecting K-means (less affected by the problem).</li>
+</ul>
+<p><strong>Handling empty clusters</strong></p>
+<p>The K-means algorithm can determine empty clusters if, during the assignment phase, no element is assigned to a centroid.</p>
+<p>In this case, different strategies can be used to identify an alternative centroid:</p>
+<ul>
+<li>Choose the item that most contributes to the value of SSE (sum of squared errors).</li>
+<li>Choose an item of the cluster with the highest SSE (the cluster will split into two clusters that include the closest elements).</li>
+</ul>
+<p><strong>Handling Outliers</strong></p>
+<p>The goodness of clustering can be negatively influenced by the presence of outliers that tend to shift the cluster centroids so that to reduce the increase in the SSE they determine.</p>
+<p>Outliers, if identifies, can be eliminated during <em>preprocessing.</em></p>
+<p><strong>Limits of K-means</strong></p>
+<p>The k-means algorithm does not achieve good results when natural clusters have:</p>
+<ul>
+<li>Different size (the value of SSE to the identification of centroids so as to have clusters of the same size if the clusters are not well-separates)</li>
+<li>Different density (more dense clusters lead to smaller intra-cluster distances, so less dense areas require more medians to minimize the total value of SSE)</li>
+<li>Non-globular shape (SSE is based on an Euclidean distance that does not take into account the shape of objects)</li>
+<li>Data contains outliers</li>
+</ul>
+<p><strong>Possible Solutions:</strong></p>
+<ul>
+<li>Use a higher k value, thus identifying portions of clusters</li>
+<li>The definition of natural clusters then requires a technique to bring together the identified clusters</li>
+<li><strong>Elbow method</strong>: execute k-means several times with increasing values for k</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 15, 2022 11:00:45</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 15, 2022 16:51:14</span>
       
         <br>
         Created:
