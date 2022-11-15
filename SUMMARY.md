@@ -3,6 +3,7 @@
 * [Decision Tree](data-mining/decision-tree/)
 * [Classifier Models](data-mining/classifiers/)
 * [Association Rule](data-mining/association-rule/)
+* [Clustering](data-mining/clustering/)
 * [Machine Learning](machine-learning/introduction/)
 * [Data Acquisition and Processing](machine-learning/data-acquisition/)
 * [Model](machine-learning/model/)
