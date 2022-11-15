@@ -1058,6 +1058,21 @@ Each item is associated with a specific time instant or ordinal position.</p>
 <p>We have sequences (like ordered purchase list from the same customer) and <strong>sub-sequences</strong> are sequences contained in a sequence where the mapping respects the order.</p>
 <p><img alt="" src="sequence.jpg" /></p>
 <p>The support of a sub-sequence w is defined as the fraction of sequences that contain w.</p>
+<p><strong>Mining Sequential Pattern</strong></p>
+<p>Given a database of sequences and a minimum support threshold, <em>minsup</em> find all subsequences whose support is &gt;= <em>minsup</em></p>
+<p><strong>Apriori Principle</strong> can be applied to sequential pattern mining since any sequence s that contains a particular k-sequence must contain all (k - 1) subsequences of s.</p>
+<p>The steps to follow in this process, include:</p>
+<ol>
+<li>Run an initial scan of the sequence DB to locate all 1-sequence</li>
+<li>Repeat until new frequent sequences are discovered<ul>
+<li>Candidate generation: find pairs of frequent subsequences found in step k-1 to generate candidate sequences containing k items</li>
+<li>Candidate pruning: eliminate k candidate sequences that contain (k-1) subsequences that are not frequent</li>
+<li>Support counting: scan the DB to find the support of candidate sequences</li>
+<li>Candidate elimination: eliminate candidate k-sequences whose support is actually less than <em>minsup</em></li>
+</ul>
+</li>
+</ol>
+<p><img alt="" src="candidate.jpg" /></p>
 <p>Searching for sequential patterns is a difficult problem given the exponential number of subsequences contained in a sequence.</p>
 <h2 id="temporal-constraints">Temporal Constraints</h2>
 <p>Temporal constraints increase the expressiveness of sequential pattern by better defining their structure.</p>
@@ -1066,13 +1081,17 @@ Each item is associated with a specific time instant or ordinal position.</p>
 <li><strong>MinGap</strong> defines the minimum gap between events belonging to two different elements</li>
 <li><strong>MaxGap</strong> defines the maximum gap between events belonging to two consecutive elements</li>
 </ul>
+<p><strong>Sequence Mining with Temporal Constraints</strong></p>
+<p>Temporal constraints impact on sequence supports as some patterns counted as frequent may not be true because some of the sequences in their support may violate a time constraint.</p>
+<p>It is necessary to modify the counting technique to account for this problem.</p>
+<p>The <strong>Time Window Size</strong> (ws) conversely relaxes the support basic definition as it specifies the interval within which two events occurring at different times should be considered simultaneous.</p>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 15, 2022 09:09:02</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 15, 2022 14:51:01</span>
       
         <br>
         Created:
