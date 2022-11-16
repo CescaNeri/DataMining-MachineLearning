@@ -851,6 +851,20 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="machine-learning/classification/neural-network.html" class="md-nav__link">
+        Neural Networks
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -1281,6 +1295,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#machine-learning-classification-neural-network" class="md-nav__link">
+    21. Neural Networks
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1296,21 +1317,21 @@
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    21. Introduction to Weka
+    22. Introduction to Weka
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
-    22. Bank Data
+    23. Bank Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
-    23. Census Data
+    24. Census Data
   </a>
   
 </li>
@@ -1330,7 +1351,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    24. Lab Notes
+    25. Lab Notes
   </a>
   
 </li>
@@ -1637,6 +1658,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#machine-learning-classification-neural-network" class="md-nav__link">
+    21. Neural Networks
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1652,21 +1680,21 @@
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-weka-lab" class="md-nav__link">
-    21. Introduction to Weka
+    22. Introduction to Weka
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-bank-data" class="md-nav__link">
-    22. Bank Data
+    23. Bank Data
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#data-mining-weka-lab-census-data" class="md-nav__link">
-    23. Census Data
+    24. Census Data
   </a>
   
 </li>
@@ -1686,7 +1714,7 @@
         
           <li class="md-nav__item">
   <a href="#machine-learning-lab-lab-notes" class="md-nav__link">
-    24. Lab Notes
+    25. Lab Notes
   </a>
   
 </li>
@@ -3119,7 +3147,50 @@ The cost function:</p>
 <p>We can change weights and bias following <strong>gradients</strong> (the derivative of a function measures the sensitivity to change of the function value with respect to a change in its argument).</p>
 <p>We can minimize the loss function with a gradient descent approach that adjust weights in the following manner:</p>
 <p><img alt="" src="machine-learning/classification/weight.jpg" /></p>
-<p><img alt="" src="machine-learning/classification/dnn-train.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Classification</h1>
+<p><img alt="" src="machine-learning/classification/dnn-train.jpg" /></p></section><section class="print-page" id="machine-learning-classification-neural-network"><h1 id="machine-learning-classification-neural-network-convolutional-neural-networks">Convolutional Neural Networks</h1>
+<p>CNNs are particular Neural Networks specifically designed to process images.
+Instead of using a flat structure, it arranges neurons on three dimensions.</p>
+<p><img alt="" src="machine-learning/classification/cnn.jpg" /></p>
+<p>How is it possible to connect a 3D input with a <strong>kernel</strong>?</p>
+<p>To do so, we need a mathematical operation called <strong>convolution</strong>.
+The convolution is the core building block of convolutional neural networks.</p>
+<p>Each kernel is convolved with the input volume thus producing a 2D feature map.
+With this process, one feature map for each kernel is produced.</p>
+<p>We usually have more than one kernel as output is usually larger than 1.
+The output volume is then made up by stacking together all activation maps produced on the top of the other.</p>
+<p><img alt="" src="machine-learning/classification/convo.jpg" /></p>
+<h2 id="machine-learning-classification-neural-network-cnn-architecture">CNN Architecture</h2>
+<p>In multi-layers architecture we have a flat structure with different layers.</p>
+<p>With CNN, we have a bunch of layers stacked one on the top of the other:</p>
+<p><img alt="" src="machine-learning/classification/cnn-arch.jpg" /></p>
+<p>Differently from HOG, CNN automatically learn how to extract features, so there is no need to specify parameters.</p>
+<p>Convolutional layers learn to extract various types of visual information in a hierarchical manner:</p>
+<ul>
+<li>In the layers close to the input, CNNs learn filters to extract 'simple' visual information.</li>
+<li>In the layers placed in depth, the filters extract semantically complex visual information.</li>
+</ul>
+<p>The interesting thing is that this mechanism seems similar to what happens in our <strong>brain</strong>, where the visual cortex processes information by different layers.</p>
+<h2 id="machine-learning-classification-neural-network-pooling-layer">Pooling Layer</h2>
+<p>Pooling layers spatially subsample the input volume (reduce the input size).
+They are widely used for a number of reasons:</p>
+<ul>
+<li>Gain robustness to exact location of the features</li>
+<li>Reduce computational cost</li>
+<li>Help preventing over-fitting</li>
+<li>Increase receptive field of following layers</li>
+</ul>
+<h2 id="machine-learning-classification-neural-network-other-layers">Other Layers</h2>
+<p><strong>Activation layer</strong>: activation function used with neural networks.</p>
+<p><strong>Flatten layer</strong>: usually exploited to connect the 3D feature extractor to the 1D classifier (like MLP wih <em>unrolled</em> img).</p>
+<p>It is possible to build a personalized architecture but it is very complex so, we will use already implemented ones:</p>
+<ul>
+<li>AlexNet</li>
+<li>ResNet</li>
+<li>VGG</li>
+</ul>
+<h2 id="machine-learning-classification-neural-network-train-cnns">Train CNNs</h2>
+<p>CNNs can be trained in different ways:</p>
+<p><img alt="" src="machine-learning/classification/train-cnn.jpg" /></p></section><h1 class='nav-section-title-end'>Ended: Classification</h1>
                         <h1 class='nav-section-title' id='section-dm-lab'>
                             DM - LAB <a class='headerlink' href='#section-dm-lab' title='Permanent link'>↵</a>
                         </h1>
