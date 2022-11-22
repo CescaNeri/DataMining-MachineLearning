@@ -118,5 +118,90 @@ With hierarchical clustering:
     - At each step, the proximity matrix must be updated and read
     - Prohibitive for large datasets
 
+## DBSCAN
+
+DBSCAN is density based approach where density refers to the number of points within a specific radius.
+
+![](dbscan.jpg)
+
+A point is a **score point** if it has at least a specified number of points within Eps (points that are the interior of a cluster).
+
+A **border point** is not a core point but is in the neighborhood of a core point.
+
+A **noise point** is any point that is not a core point o a border point.
+
+```
+DBSCAN algorithm
+
+// Input: Dataset D, MinPts, Eps
+// Output: set of cluster C
+
+Label points in D as core, border or noise
+Drop all noise points
+Assign to cluster c the core points with a distance > Eps from one of the other points assigned to the same cluster
+Assign border points to one of the clusters the corresponding core points belong to
+
+```
+
+**Pros and Cons of DBSCAN:**
+
+- Pros:
+    - Resistant to noise
+    - It can generate clusters with different shapes and sizes
+- Cons:
+    - Data with high dimensionality 
+
+## Cluster Validity
+
+For supervised classification techniques, there are several measures to evaluate the validity of the results based on the comparison between the known labels of the test set and those calculated by the algorithm.
+
+**Validity Measures:**
+
+Numerical measures that are applied to judge various aspects of cluster validity, are classified into the following three types:
+
+- Internal index (used to measure the goodness of a clustering structure without respect to external information)
+- External index (used to measure the extent to which a cluster labels match externally supplied class labels)
+- Relative index (used to compare two different clusters)
+
+**Internal Measures:**
+
+- Custer Cohesion (measures how closely related are objects in a cluster - SSE)
+- Cluster Separation (measure how distinct or well-separated a cluster is from other clusters)
+
+![](measures.jpg)
+
+Validity can be measured via **correlation:**
+
+- Two matrices are used
+    - Proximity Matrix
+    - Incidence Matrix
+- Compute the correlation between the two matrices
+- High correlation indicates that points that belong to the same clusters are close to each other
+- Not a good measure for some density based clusters
+- Correlation between the incidence matrix and the proximity matrix on the results of the k-means algorithm on two data sets
+
+## Cophenetic Distance
+
+![](coph.jpg)
+
+To define weather the measures obtained are good or bad, we need to define some KPIs obtained by comparing our results with the results obtained with random data.
+
+We are looking for non-random patterns, so, the more atypical the result we get is, the more likely it is to represent a non-random pattern in the data.
+
+The issue of interpreting the measure value is less pressing when comparing the results of two clustering.
+
+![](hopkins.jpg)
+
+**External measures for clustering validation:**
+
+External information is usually the class labels of the objects on which clustering is performed.
+They allow you to measure the correspondence between the computed eticle of the cluster and the class label.
+
+If class labels are available, we perform clustering to compare the results of different clustering techniques and evaluate the possibility of automatically obtaining an otherwise manual classification.
+
+Two approaches are possible:
+
+- Classification-oriented (evaluate the extent to which clusters contain objects belonging to the same class)
+- Similarity-oriented (they measure how often two objects to the same cluster belong to the same class)
 
 

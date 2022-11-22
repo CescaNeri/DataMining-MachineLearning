@@ -2634,6 +2634,76 @@ Different approaches to defining the distance between clusters distinguish the d
 <li>Prohibitive for large datasets</li>
 </ul>
 </li>
+</ul>
+<h2 id="data-mining-clustering-clustering-dbscan">DBSCAN</h2>
+<p>DBSCAN is density based approach where density refers to the number of points within a specific radius.</p>
+<p><img alt="" src="data-mining/clustering/dbscan.jpg" /></p>
+<p>A point is a <strong>score point</strong> if it has at least a specified number of points within Eps (points that are the interior of a cluster).</p>
+<p>A <strong>border point</strong> is not a core point but is in the neighborhood of a core point.</p>
+<p>A <strong>noise point</strong> is any point that is not a core point o a border point.</p>
+<div class="highlight"><pre><span></span><code>DBSCAN algorithm
+
+// Input: Dataset D, MinPts, Eps
+// Output: set of cluster C
+
+Label points in D as core, border or noise
+Drop all noise points
+Assign to cluster c the core points with a distance &gt; Eps from one of the other points assigned to the same cluster
+Assign border points to one of the clusters the corresponding core points belong to
+</code></pre></div>
+<p><strong>Pros and Cons of DBSCAN:</strong></p>
+<ul>
+<li>Pros:<ul>
+<li>Resistant to noise</li>
+<li>It can generate clusters with different shapes and sizes</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Data with high dimensionality </li>
+</ul>
+</li>
+</ul>
+<h2 id="data-mining-clustering-clustering-cluster-validity">Cluster Validity</h2>
+<p>For supervised classification techniques, there are several measures to evaluate the validity of the results based on the comparison between the known labels of the test set and those calculated by the algorithm.</p>
+<p><strong>Validity Measures:</strong></p>
+<p>Numerical measures that are applied to judge various aspects of cluster validity, are classified into the following three types:</p>
+<ul>
+<li>Internal index (used to measure the goodness of a clustering structure without respect to external information)</li>
+<li>External index (used to measure the extent to which a cluster labels match externally supplied class labels)</li>
+<li>Relative index (used to compare two different clusters)</li>
+</ul>
+<p><strong>Internal Measures:</strong></p>
+<ul>
+<li>Custer Cohesion (measures how closely related are objects in a cluster - SSE)</li>
+<li>Cluster Separation (measure how distinct or well-separated a cluster is from other clusters)</li>
+</ul>
+<p><img alt="" src="data-mining/clustering/measures.jpg" /></p>
+<p>Validity can be measured via <strong>correlation:</strong></p>
+<ul>
+<li>Two matrices are used<ul>
+<li>Proximity Matrix</li>
+<li>Incidence Matrix</li>
+</ul>
+</li>
+<li>Compute the correlation between the two matrices</li>
+<li>High correlation indicates that points that belong to the same clusters are close to each other</li>
+<li>Not a good measure for some density based clusters</li>
+<li>Correlation between the incidence matrix and the proximity matrix on the results of the k-means algorithm on two data sets</li>
+</ul>
+<h2 id="data-mining-clustering-clustering-cophenetic-distance">Cophenetic Distance</h2>
+<p><img alt="" src="data-mining/clustering/coph.jpg" /></p>
+<p>To define weather the measures obtained are good or bad, we need to define some KPIs obtained by comparing our results with the results obtained with random data.</p>
+<p>We are looking for non-random patterns, so, the more atypical the result we get is, the more likely it is to represent a non-random pattern in the data.</p>
+<p>The issue of interpreting the measure value is less pressing when comparing the results of two clustering.</p>
+<p><img alt="" src="data-mining/clustering/hopkins.jpg" /></p>
+<p><strong>External measures for clustering validation:</strong></p>
+<p>External information is usually the class labels of the objects on which clustering is performed.
+They allow you to measure the correspondence between the computed eticle of the cluster and the class label.</p>
+<p>If class labels are available, we perform clustering to compare the results of different clustering techniques and evaluate the possibility of automatically obtaining an otherwise manual classification.</p>
+<p>Two approaches are possible:</p>
+<ul>
+<li>Classification-oriented (evaluate the extent to which clusters contain objects belonging to the same class)</li>
+<li>Similarity-oriented (they measure how often two objects to the same cluster belong to the same class)</li>
 </ul></section><h1 class='nav-section-title-end'>Ended: Clustering</h1>
                         <h1 class='nav-section-title' id='section-machine-learning'>
                             Machine Learning <a class='headerlink' href='#section-machine-learning' title='Permanent link'>↵</a>
