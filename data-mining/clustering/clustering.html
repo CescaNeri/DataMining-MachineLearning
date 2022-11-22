@@ -617,6 +617,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hierarchical-clustering" class="md-nav__link">
+    Hierarchical Clustering
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1108,6 +1115,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#hierarchical-clustering" class="md-nav__link">
+    Hierarchical Clustering
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1191,13 +1205,45 @@ So, there is only a finite number of possible configurations in which all the ce
 <li>The definition of natural clusters then requires a technique to bring together the identified clusters</li>
 <li><strong>Elbow method</strong>: execute k-means several times with increasing values for k</li>
 </ul>
+<p>With the elbow method, in the beginning the error decreases but then, at some point, the curve will be flattened as we dropping some intra-clusters.</p>
+<p>The natural number of clusters is located in the point in which we have the <em>elbow</em>.</p>
+<p><img alt="" src="exercise.jpg" /></p>
+<h2 id="hierarchical-clustering">Hierarchical Clustering</h2>
+<p>Hierarchical clustering produces a set of nested clusters organized as a hierarchical tree (it can be visualized as a dendrogram).</p>
+<p>There are two approaches to build a hierarchical clustering:</p>
+<ol>
+<li><strong>Agglomerative</strong> (start with the points as individual clusters and, at each step, merge the closest pair of clusters until only one cluster is left).</li>
+<li><strong>Divisive</strong> (start with one, all-inclusive cluster and, at each step, split the cluster until each cluster contains an individual point).</li>
+</ol>
+<p>The key operation is the computation of the proximity of two clusters.
+Different approaches to defining the distance between clusters distinguish the different algorithms.</p>
+<p><strong>Inter-cluster Distances</strong></p>
+<ul>
+<li>MIN: minimum distance between two cluster points</li>
+<li>MAX: maximum distance between all cluster points</li>
+<li>Group Average: average distance between all the cluster points</li>
+</ul>
+<p><img alt="" src="min.jpg" /></p>
+<p>Using MIN links, we can have non-globular clusters.</p>
+<p><img alt="" src="max.jpg" /></p>
+<p>Having the MAX distance as reference distance, we will get more globular clusters and once they are put together, they cannot be split (greedy).</p>
+<p><strong>Computation Complexity</strong></p>
+<p>With hierarchical clustering:</p>
+<ul>
+<li>O(N^2) is the space occupied by the proximity matrix when the number of points is N.</li>
+<li>O(N^3), where N refers to the steps needed to build the dendrogram.<ul>
+<li>At each step, the proximity matrix must be updated and read</li>
+<li>Prohibitive for large datasets</li>
+</ul>
+</li>
+</ul>
 
   <hr>
 <div class="md-source-file">
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 15, 2022 16:51:14</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">November 22, 2022 09:05:55</span>
       
         <br>
         Created:

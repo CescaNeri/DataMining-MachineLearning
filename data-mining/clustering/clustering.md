@@ -77,3 +77,46 @@ The k-means algorithm does not achieve good results when natural clusters have:
 - The definition of natural clusters then requires a technique to bring together the identified clusters
 - **Elbow method**: execute k-means several times with increasing values for k
 
+With the elbow method, in the beginning the error decreases but then, at some point, the curve will be flattened as we dropping some intra-clusters.
+
+The natural number of clusters is located in the point in which we have the *elbow*.
+
+![](exercise.jpg)
+
+## Hierarchical Clustering
+
+Hierarchical clustering produces a set of nested clusters organized as a hierarchical tree (it can be visualized as a dendrogram).
+
+There are two approaches to build a hierarchical clustering:
+
+1. **Agglomerative** (start with the points as individual clusters and, at each step, merge the closest pair of clusters until only one cluster is left).
+2. **Divisive** (start with one, all-inclusive cluster and, at each step, split the cluster until each cluster contains an individual point).
+
+The key operation is the computation of the proximity of two clusters.
+Different approaches to defining the distance between clusters distinguish the different algorithms.
+
+**Inter-cluster Distances**
+
+- MIN: minimum distance between two cluster points
+- MAX: maximum distance between all cluster points
+- Group Average: average distance between all the cluster points
+
+![](min.jpg)
+
+Using MIN links, we can have non-globular clusters.
+
+![](max.jpg)
+
+Having the MAX distance as reference distance, we will get more globular clusters and once they are put together, they cannot be split (greedy).
+
+**Computation Complexity**
+
+With hierarchical clustering:
+
+- O(N^2) is the space occupied by the proximity matrix when the number of points is N.
+- O(N^3), where N refers to the steps needed to build the dendrogram.
+    - At each step, the proximity matrix must be updated and read
+    - Prohibitive for large datasets
+
+
+
