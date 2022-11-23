@@ -2,6 +2,8 @@
 
 Presented by: **Cosimo Fiorino** - Head of Data Science
 
+*c.fiorini@ammagamma.com*
+
 The team of *Ammagamma* is various, composed not only by engineers, but also philosophers and designers.
 
 Their **vision** is to develop a society aware of the potentialities, implications and impacts of technology.
@@ -70,7 +72,5 @@ Make sure that when you build a model you will be able to reproduce it in the fu
 ## Data Ethic
 
 ![](ethic.jpg)
-
-
 
 
