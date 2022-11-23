@@ -10,3 +10,4 @@
 * [Classification](machine-learning/classification/)
 * [DM - LAB](data-mining/weka-lab/)
 * [ML - LAB](machine-learning/LAB/)
+* [ML - Seminar](machine-learning/seminar/)
