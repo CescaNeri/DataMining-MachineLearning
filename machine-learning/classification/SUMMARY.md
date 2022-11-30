@@ -2,3 +2,4 @@
 * [Metrics](metrics.md)
 * [Deep Learning](deep-learning.md)
 * [Neural Networks](neural-network.md)
+* [Machine Learning vs Deep Learning](machine-vs-deep.md)
