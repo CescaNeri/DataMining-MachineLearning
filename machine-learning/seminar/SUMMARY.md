@@ -2,3 +2,4 @@
 * [Inventory Optimization](use-cases.md)
 * [Marketing Management Optimization](marketing.md)
 * [Natural Language Processing](nlp.md)
+* [AI Ethics](ethics.md)
