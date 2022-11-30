@@ -23,3 +23,17 @@ With **in-house solutions**, the company buys the necessary hardware and is the 
     - For large number of GPUs -> specific server rooms (with high energy consumption)
     - The GPU market is quite expensive and volatile
 
+With **external solutions**, the hardware is rented through the PaaS paradigm (Cloud).
+
+- Pros:
+    - Hardware maintenance is not required
+    - No investment over time is required for hardware upgrades
+    - Dedicated server rooms are not required, energy consumption is not borne by the company
+- Cons:
+    - In the long run, it tends to have higher costs
+    - Vendor lock-in
+    - We do not really know who the owner of the data is
+    - Privacy issues
+
+![](ai.jpg)
+
