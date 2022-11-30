@@ -62,6 +62,16 @@ And what if AI is wrong but it is so powerful that it can convince humans?
 
 *Are we sure that we are completely free of biases?*
 
+Right now, we have no answer to all these questions, because software development is not considered to be economically valuable.
+
+In order to design safe AI systems, we should follow these steps:
+
+1. Alignment 
+2. Robustness
+3. Corrigibility 
+
+Some countermeasures to adopt would be to use explainable models (deep learning, CNN and neural network are not explainable).
+
 
 
 
