@@ -13,7 +13,7 @@ In **1950** the enthusiasm for AI began:
 
 In **1980** the Boom times occurred:
 
-- Commercialization of new AI Expert Systems capable of reproducing human-decision making, through *"if-then-else"* rules
+- Commercialization of new AI Expert Systems capable of reproducing human decision-making, through *"if-then-else"* rules
 - Financial planning, medical diagnosis, geological exploration, and microelectronic circuit design
 
 **Second AI Winter** - many tasks were too complicated for engineers
