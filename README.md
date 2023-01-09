@@ -3,7 +3,7 @@
 ## Modules:
 
 - **Data Mining**: Prof. Golfarelli - 36h
-    - introduction to data mining
+    - Introduction to data mining
     - Knowledge discovery process
     - Understanding and preparing data
     - Data mining techniques
@@ -12,8 +12,8 @@
     - Case studies analysis
 
 - **Machine Learning**: Prof. Guido Borghi - 18h
-    - Neural network
-    - Pattern recognition
+    - Neural Network
+    - Pattern Recognition
 
 ## Assessment Method - EXAM
 
