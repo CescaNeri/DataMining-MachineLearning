@@ -16,7 +16,7 @@ Simulating human intelligence is extremely complex as our brain in an incredibly
 
 ![](tractica.jpg)
 
-For both graphs, we can not the exponential trend and the variety of continents covered. 
+For both graphs, we can note the exponential trend and the variety of continents covered. 
 
 *Information is the oil of 21st century, and analytics is the combustion engine*
 
@@ -36,7 +36,7 @@ Nvidia is the leading company in the sector and this is the reason why its share
 
 ## The General Paradigm of Machine Learning
 
-**Machine Learning** is a subset of the AI field that tries to develop systems able to automatically learn from specific examples (*training data*) amd to generalize the knowledge on new samples (*testing data*) of the same domain.
+**Machine Learning** is a subset of the AI field that tries to develop systems able to automatically learn from specific examples (*training data*) and to generalize the knowledge on new samples (*testing data*) of the same domain.
 
 From a practical point of view:
 
