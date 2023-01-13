@@ -27,12 +27,12 @@ We do not just need to find results, but we need results to be USEFUL.
 
 ## Analytics
 
-ANalytics refers to software used to discover, understand and share relevant pattern in data.
+Analytics refers to software used to discover, understand and share relevant pattern in data.
 Analytics are based on the concurrent use of statistics, machine learning and operational research techniques, often exploiting visualization techniques. 
 
 ![](BI.jpg)
 
-Prescriptive systems generale much value but it is extremely complex. Companies should start simple, adopting simple descriptive analytics solutions, and then move on. 
+Prescriptive systems generate much value but it is extremely complex. Companies should start simple, adopting simple descriptive analytics solutions, and then move on. 
 It is risky to skip intermediate steps.
 
 ## BI adoption path
@@ -83,10 +83,12 @@ The process begins with a huge multi-dimension cube of data, then grouping and s
 ## Data Mining Applications
 
 **Predictive Systems**
+
 Exploit some features to predict the unknown values of other features (classification and regression).
 
 **Descriptive Systems**
-Find user-readable patterns that can be understood by human users (clustering, association rules, sequential patter).
+
+Find user-readable patterns that can be understood by human users (clustering, association rules, sequential pattern).
 
 ## Classification - Definition
 
@@ -128,7 +130,8 @@ Given a set of points, each featuring set of attributes, and having a similarity
 *points belonging to a cluster are more similar to each other than those belonging to other clusters*
 
 **Marketing Segmentation**
-The goal is to spit customers into distinct subsets to target specific marketing activities.
+
+The goal is to split customers into distinct subsets to target specific marketing activities.
 
 Techniques:
 
