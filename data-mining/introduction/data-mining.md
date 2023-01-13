@@ -164,7 +164,7 @@ This information can be used to understand what actions to take to increase its 
 
 A data mining project requires a structured approach in order to choose the best algorithm.
 
-**CRISP-DM** methodology is the most used technique. It is one of the most structures proposals to define the fundamental steps of a data mining project. 
+**CRISP-DM** methodology is the most used technique. It is one of the most structured proposals to define the fundamental steps of a data mining project. 
 
 ![](crisp.jpg)
 
