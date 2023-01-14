@@ -20,6 +20,7 @@ We can identify 4 types of attributes:
 - Binary, discrete and continuous
     - Discrete: finite number of infinite countable set of values
     - Continuous: real values
+
 *Nominal and ordinal are typically discrete or binary, while interval and ratio attributes are continuous*
 - Asymmetric attribute: only instances that take non-zero values are relevant
 - Documents and Texts: objects of the analysis described by a vector of terms
@@ -30,7 +31,7 @@ We can identify 4 types of attributes:
 - Ordered data
 
 ## Explorative Analysis 
-First step in business and ata understanding. It refers to the preliminary analysis of the data aimed at identify its main characteristics. 
+First step in business and data understanding. It refers to the preliminary analysis of the data aimed at identify its main characteristics. 
 
 - It helps you choose the best tool for processing and analysis 
 
@@ -145,6 +146,7 @@ Some techniques are stronger with long distances while sometimes, by setting the
 ![](distance.jpg)
 
 **Distance Properties**
+
 Given two objects p and q and a dissimilarity measure d():
 
 - d(p,q) = 0 only if p=q
@@ -154,12 +156,14 @@ Given two objects p and q and a dissimilarity measure d():
 ![](triangular.jpg)
 
 **Similarity Properties**
+
 Given two objects p and q and a similarity measure s():
 
 - s(p,q) = 1 only if p=q
 - s(p,q) = s(q,p) -> *Symmetry*
 
 **Binary Vector Similarities**
+
 It is common for attributes describing an object to contain only binary values.
 
 - M01 = the number of attributes where p=0 and q=1
@@ -168,9 +172,11 @@ It is common for attributes describing an object to contain only binary values.
 - M11 = the number of attributes where p=1 and q=1
 
 **Cosine Similarity**
+
 Like Jaccard's index. it does not consider 00 matches, but also allows non-binary vectors to be operated on.
 
 **Similarity with Heterogeneous Attributes**
+
 In the presence of heterogeneous attributes, it is necessary to compute the similarities separately and then combine them so that their result belongs to the range [0, 1]
 
 

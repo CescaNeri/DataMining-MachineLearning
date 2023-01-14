@@ -2335,22 +2335,20 @@ Therefore, the goal was to model customers' training sessions in order to predic
 <ul>
 <li>Binary, discrete and continuous<ul>
 <li>Discrete: finite number of infinite countable set of values</li>
-<li>Continuous: real values
-<em>Nominal and ordinal are typically discrete or binary, while interval and ratio attributes are continuous</em></li>
+<li>Continuous: real values</li>
 </ul>
 </li>
-<li>Asymmetric attribute: only instances that take non-zero values are relevant</li>
-<li>Documents and Texts: objects of the analysis described by a vector of terms</li>
-<li>Transactions<ul>
-<li>Each record involves multiple items</li>
-<li>Items come from a finite set</li>
-<li>The number of items may vary from transaction to transaction</li>
 </ul>
-</li>
-<li>Ordered data</li>
-</ul>
+<p><em>Nominal and ordinal are typically discrete or binary, while interval and ratio attributes are continuous</em>
+- Asymmetric attribute: only instances that take non-zero values are relevant
+- Documents and Texts: objects of the analysis described by a vector of terms
+- Transactions
+    - Each record involves multiple items
+    - Items come from a finite set
+    - The number of items may vary from transaction to transaction
+- Ordered data</p>
 <h2 id="data-mining-data-understanding-data-understanding-explorative-analysis">Explorative Analysis</h2>
-<p>First step in business and ata understanding. It refers to the preliminary analysis of the data aimed at identify its main characteristics. </p>
+<p>First step in business and data understanding. It refers to the preliminary analysis of the data aimed at identify its main characteristics. </p>
 <ul>
 <li>It helps you choose the best tool for processing and analysis </li>
 </ul>
@@ -2468,32 +2466,32 @@ The entropy of a <strong>certain</strong> event is zero.</p>
 <p><img alt="" src="data-mining/data-understanding/similarity.jpg" /></p>
 <h2 id="data-mining-data-understanding-data-understanding-distance">Distance</h2>
 <p><img alt="" src="data-mining/data-understanding/distance.jpg" /></p>
-<p><strong>Distance Properties</strong>
-Given two objects p and q and a dissimilarity measure d():</p>
+<p><strong>Distance Properties</strong></p>
+<p>Given two objects p and q and a dissimilarity measure d():</p>
 <ul>
 <li>d(p,q) = 0 only if p=q</li>
 <li>d(p,q) = d(q,p) -&gt; <em>Symmetry</em> </li>
 <li>d(p,r) + d(p,q) + d(q,r) -&gt; <em>Triangular inequality</em></li>
 </ul>
 <p><img alt="" src="data-mining/data-understanding/triangular.jpg" /></p>
-<p><strong>Similarity Properties</strong>
-Given two objects p and q and a similarity measure s():</p>
+<p><strong>Similarity Properties</strong></p>
+<p>Given two objects p and q and a similarity measure s():</p>
 <ul>
 <li>s(p,q) = 1 only if p=q</li>
 <li>s(p,q) = s(q,p) -&gt; <em>Symmetry</em></li>
 </ul>
-<p><strong>Binary Vector Similarities</strong>
-It is common for attributes describing an object to contain only binary values.</p>
+<p><strong>Binary Vector Similarities</strong></p>
+<p>It is common for attributes describing an object to contain only binary values.</p>
 <ul>
 <li>M01 = the number of attributes where p=0 and q=1</li>
 <li>M10 = the number of attributes where p=1 and q=0</li>
 <li>M00 = the number of attributes where p=0 and q=0</li>
 <li>M11 = the number of attributes where p=1 and q=1</li>
 </ul>
-<p><strong>Cosine Similarity</strong>
-Like Jaccard's index. it does not consider 00 matches, but also allows non-binary vectors to be operated on.</p>
-<p><strong>Similarity with Heterogeneous Attributes</strong>
-In the presence of heterogeneous attributes, it is necessary to compute the similarities separately and then combine them so that their result belongs to the range [0, 1]</p>
+<p><strong>Cosine Similarity</strong></p>
+<p>Like Jaccard's index. it does not consider 00 matches, but also allows non-binary vectors to be operated on.</p>
+<p><strong>Similarity with Heterogeneous Attributes</strong></p>
+<p>In the presence of heterogeneous attributes, it is necessary to compute the similarities separately and then combine them so that their result belongs to the range [0, 1]</p>
 <h2 id="data-mining-data-understanding-data-understanding-correlation">Correlation</h2>
 <p>The correlation between pairs of objects described by attributes (binary or continuous) is a measure of the existence of a linear relationship between its attributes.</p>
 <p><img alt="" src="data-mining/data-understanding/correlation.jpg" /></p>
