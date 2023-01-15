@@ -24,7 +24,7 @@ A set of rules R has **exhaustive coverage** if there is one rule for each combi
 
 ## Properties
 
-- It is nt always possible to determine an exhaustive and mutually exclusive set of rules
+- It is not always possible to determine an exhaustive and mutually exclusive set of rules
 - Lack of mutual exclusivity
 - Lack of exhaustiveness
 
@@ -81,7 +81,7 @@ Some metrics (like the **FoilGrain**) supports the rule by identifying the numbe
 
 **Stop Criterion**: as soon as the rule is not relevant anymore, stop it.
 
-**Rule Pruning**: it aims at simplifying tules to improve rule generalization error.
+**Rule Pruning**: it aims at simplifying rules to improve rule generalization error.
 It can be useful given that the construction approach is greedy.
 
 *example: remove the predicate whose removal results in the greatest improvement in error rate on the validation set*
@@ -90,7 +90,7 @@ It can be useful given that the construction approach is greedy.
 
 It is an approach based on sequential covering for 2-class problem and it is used to choose one of the classes as a positive class and the other as a negative class.
 
-the idea is to compute the description length (cost for transmitting the data set from one user to another) and if it exceeds the threshold, we should sthop.
+The idea is to compute the description length (cost for transmitting the data set from one user to another) and if it exceeds the threshold, we should stop.
 
 ![](indirect.jpg)
 

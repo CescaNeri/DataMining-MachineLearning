@@ -1386,7 +1386,7 @@ Given a dataset D and a classification rule A -&gt; y, we define:</p>
 <p>A set of rules R has <strong>exhaustive coverage</strong> if there is one rule for each combination of attribute values.</p>
 <h2 id="properties">Properties</h2>
 <ul>
-<li>It is nt always possible to determine an exhaustive and mutually exclusive set of rules</li>
+<li>It is not always possible to determine an exhaustive and mutually exclusive set of rules</li>
 <li>Lack of mutual exclusivity</li>
 <li>Lack of exhaustiveness</li>
 </ul>
@@ -1434,12 +1434,12 @@ Given a dataset D and a classification rule A -&gt; y, we define:</p>
 <p><strong>Accuracy(r) = nr/n</strong></p>
 <p>Some metrics (like the <strong>FoilGrain</strong>) supports the rule by identifying the number of positive examples covered by the rule.</p>
 <p><strong>Stop Criterion</strong>: as soon as the rule is not relevant anymore, stop it.</p>
-<p><strong>Rule Pruning</strong>: it aims at simplifying tules to improve rule generalization error.
+<p><strong>Rule Pruning</strong>: it aims at simplifying rules to improve rule generalization error.
 It can be useful given that the construction approach is greedy.</p>
 <p><em>example: remove the predicate whose removal results in the greatest improvement in error rate on the validation set</em></p>
 <h2 id="the-ripper-method">The RIPPER Method</h2>
 <p>It is an approach based on sequential covering for 2-class problem and it is used to choose one of the classes as a positive class and the other as a negative class.</p>
-<p>the idea is to compute the description length (cost for transmitting the data set from one user to another) and if it exceeds the threshold, we should sthop.</p>
+<p>The idea is to compute the description length (cost for transmitting the data set from one user to another) and if it exceeds the threshold, we should stop.</p>
 <p><img alt="" src="indirect.jpg" /></p>
 
   <hr>
@@ -1447,7 +1447,7 @@ It can be useful given that the construction approach is greedy.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 11, 2022 10:44:03</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">January 15, 2023 13:36:50</span>
       
         <br>
         Created:
