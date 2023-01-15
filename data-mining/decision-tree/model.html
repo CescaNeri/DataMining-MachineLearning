@@ -1455,7 +1455,7 @@ It is a recursive approach that progressively subdivides a set of Dt records int
 <p>Accuracy is not an appropriate  metric if the classes contain a very different number of records.</p>
 <p><strong>Precision and Recall</strong> are two metric used in applications where the correct classification of positive class records is more important</p>
 <ul>
-<li><strong>Precision</strong> measures the fraction of record results actually among all those who were classified as such</li>
+<li><strong>Precision</strong> measures the fraction of record results actually positive among all those who were classified as such</li>
 <li><strong>Recall</strong> measures the fraction of positive records correctly classified</li>
 </ul>
 <p><img alt="" src="precision-recall.jpg" /></p>
@@ -1465,10 +1465,10 @@ Accuracy, precision, recall and F-measure classify an instance as positive if P(
 They assume that FN and FP have the same weight, thus they are cost-intensive, but in many domains this is not true.</p>
 <p><img alt="" src="cost.jpg" /></p>
 <h2 id="roc-space-receiver-operator-characteristics">ROC Space (Receiver Operator Characteristics)</h2>
-<p>Roc graohs are two-dimensional graphs that depict relative tradeoffs between benefits (TP) and costs (FP) induced by a classifier. We distinguish between:</p>
+<p>Roc graphs are two-dimensional graphs that depict relative tradeoffs between benefits (TP) and costs (FP) induced by a classifier. We distinguish between:</p>
 <ul>
-<li><strong>Probabilistic classifiers</strong> return a score that is not necessarily a <em>sensu strictu</em> probability but represents the degree to which an object is a member of one particular class rather than another one
--<strong>Discrete classifier</strong> predicts only the classes to which a test object belongs</li>
+<li><strong>Probabilistic classifiers</strong> return a score that is not necessarily a <em>sensu strictu</em> probability but represents the degree to which an object is a member of one particular class rather than another one</li>
+<li><strong>Discrete classifier</strong> predicts only the classes to which a test object belongs</li>
 </ul>
 <p><img alt="" src="ROC.jpg" /></p>
 <h2 id="classification-errors">Classification Errors</h2>
@@ -1484,7 +1484,7 @@ They assume that FN and FP have the same weight, thus they are cost-intensive, b
 </ul>
 <p><strong>How to handle overfitting</strong></p>
 <ul>
-<li>Pre-pruning: stop splitting before you reach a deep tree. A node can be split further if:<ul>
+<li>Pre-pruning: stop splitting before you reach a deep tree. A node can not be split further if:<ul>
 <li>Nodes does not contain instances</li>
 <li>All instances belong to the same class</li>
 <li>All attributes have the same values</li>
@@ -1518,7 +1518,7 @@ It manages data with missed values and run post pruning of the created tree.</p>
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">October 4, 2022 12:54:22</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime">January 15, 2023 12:20:58</span>
       
         <br>
         Created:
