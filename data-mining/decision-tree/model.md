@@ -81,7 +81,7 @@ Accuracy is not an appropriate  metric if the classes contain a very different n
 
 **Precision and Recall** are two metric used in applications where the correct classification of positive class records is more important
 
-- **Precision** measures the fraction of record results actually among all those who were classified as such
+- **Precision** measures the fraction of record results actually positive among all those who were classified as such
 - **Recall** measures the fraction of positive records correctly classified
 
 ![](precision-recall.jpg)
@@ -95,10 +95,10 @@ They assume that FN and FP have the same weight, thus they are cost-intensive, b
 ![](cost.jpg)
 
 ## ROC Space (Receiver Operator Characteristics)
-Roc graohs are two-dimensional graphs that depict relative tradeoffs between benefits (TP) and costs (FP) induced by a classifier. We distinguish between:
+Roc graphs are two-dimensional graphs that depict relative tradeoffs between benefits (TP) and costs (FP) induced by a classifier. We distinguish between:
 
 - **Probabilistic classifiers** return a score that is not necessarily a *sensu strictu* probability but represents the degree to which an object is a member of one particular class rather than another one
--**Discrete classifier** predicts only the classes to which a test object belongs
+- **Discrete classifier** predicts only the classes to which a test object belongs
 
 ![](ROC.jpg)
 
@@ -113,7 +113,7 @@ Roc graohs are two-dimensional graphs that depict relative tradeoffs between ben
 
 **How to handle overfitting**
 
-- Pre-pruning: stop splitting before you reach a deep tree. A node can be split further if:
+- Pre-pruning: stop splitting before you reach a deep tree. A node can not be split further if:
     - Nodes does not contain instances
     - All instances belong to the same class
     - All attributes have the same values
