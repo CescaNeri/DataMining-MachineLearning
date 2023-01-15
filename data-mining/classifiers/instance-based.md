@@ -21,6 +21,7 @@ Requirements:
 The classification process calculates the distance to the records in the training set, it identifies k nearest neighbors and uses nearest neighbor class labels to determine the class of the unknown record.
 
 The choice of k is important because:
+
 - If k is too small, the approach is sensitive to noise
 - If k is too large, the surround may include examples belonging to other classes
 
