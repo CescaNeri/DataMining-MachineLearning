@@ -2,7 +2,7 @@
 
 Clustering analysis aims at finding groups of objects such that objects that belong to the same group are more similar to each other than objects belonging to different groups.
 
-CLustering is NOT supervised classification (it assumes classes to be known) or segmentation (partition rule is given) or querying a database (the selection and grouping criteria are given).
+Clustering is NOT supervised classification (it assumes classes to be known) or segmentation (partition rule is given) or querying a database (the selection and grouping criteria are given).
 
 ## Types of clustering
 
@@ -66,7 +66,7 @@ Outliers, if identifies, can be eliminated during *preprocessing.*
 
 The k-means algorithm does not achieve good results when natural clusters have:
 
-- Different size (the value of SSE to the identification of centroids so as to have clusters of the same size if the clusters are not well-separates)
+- Different size (the value of SSE leads to the identification of centroids so as to have clusters of the same size if the clusters are not well-separates)
 - Different density (more dense clusters lead to smaller intra-cluster distances, so less dense areas require more medians to minimize the total value of SSE)
 - Non-globular shape (SSE is based on an Euclidean distance that does not take into account the shape of objects)
 - Data contains outliers
@@ -124,7 +124,7 @@ DBSCAN is density based approach where density refers to the number of points wi
 
 ![](dbscan.jpg)
 
-A point is a **score point** if it has at least a specified number of points within Eps (points that are the interior of a cluster).
+A point is a **core point** if it has at least a specified number of points within Eps (points that are the interior of a cluster).
 
 A **border point** is not a core point but is in the neighborhood of a core point.
 
@@ -184,7 +184,7 @@ Validity can be measured via **correlation:**
 
 ![](coph.jpg)
 
-To define weather the measures obtained are good or bad, we need to define some KPIs obtained by comparing our results with the results obtained with random data.
+To define whether the measures obtained are good or bad, we need to define some KPIs obtained by comparing our results with the results obtained with random data.
 
 We are looking for non-random patterns, so, the more atypical the result we get is, the more likely it is to represent a non-random pattern in the data.
 
@@ -195,13 +195,11 @@ The issue of interpreting the measure value is less pressing when comparing the 
 **External measures for clustering validation:**
 
 External information is usually the class labels of the objects on which clustering is performed.
-They allow you to measure the correspondence between the computed eticle of the cluster and the class label.
+They allow you to measure the correspondence between the computed label of the cluster and the class label.
 
 If class labels are available, we perform clustering to compare the results of different clustering techniques and evaluate the possibility of automatically obtaining an otherwise manual classification.
 
 Two approaches are possible:
 
 - Classification-oriented (evaluate the extent to which clusters contain objects belonging to the same class)
-- Similarity-oriented (they measure how often two objects to the same cluster belong to the same class)
-
-
+- Similarity-oriented (they measure how often two objects to the same cluster belong to the same class
